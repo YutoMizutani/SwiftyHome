@@ -14,11 +14,13 @@ target 'SwiftyHomeTests' do
 
   pod 'Alamofire'
   pod 'RxSwift'
+  pod 'RxCocoa'
 end
 
 target 'SwiftyHomeUITests' do
   inherit! :search_paths
 
+  pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa'
 end
