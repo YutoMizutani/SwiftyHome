@@ -1,0 +1,20 @@
+language: objective-c
+osx_image: xcode10
+
+cache: cocoapods
+podfile: Podfile
+
+env:
+  matrix:
+    - PROJECT_NAME="SwiftyHome"
+    - WORKSPACE="${PROJECT_NAME}.xcworkspace"
+    - SCHEME="${PROJECT_NAME}Tests"
+    - PROJECT="${PROJECT_NAME}.xcodeproj"
+
+before_script:
+  - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+  - pod install
+
+script:
+    set -o pipefail && xcodebuild test -verbose -scheme ${SCHEME} -destination "platform=iOS Simulator,OS=12.0,name=iPhone X" ONLY_ACTIVE_ARCH=NO | xcpretty
