@@ -336,6 +336,7 @@
 				997045D32178DEF000FFB736 /* Frameworks */,
 				997045D42178DEF000FFB736 /* Resources */,
 				B1D07C3687552FEB15FC632A /* [CP] Embed Pods Frameworks */,
+				99AF347B217A2A8E00B7A332 /* Swiftlint Script */,
 			);
 			buildRules = (
 			);
@@ -552,6 +553,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftyHomeUITests/Pods-SwiftyHomeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		99AF347B217A2A8E00B7A332 /* Swiftlint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swiftlint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		B1D07C3687552FEB15FC632A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
