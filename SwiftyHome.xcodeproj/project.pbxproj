@@ -127,6 +127,10 @@
 		997045D82178DEF000FFB736 /* SwiftyHome */ = {
 			isa = PBXGroup;
 			children = (
+				99704608217987B600FFB736 /* Application */,
+				99704609217987C300FFB736 /* Data */,
+				9970460A217987CF00FFB736 /* Domain */,
+				9970460B217987DA00FFB736 /* Presentation */,
 				997045D92178DEF000FFB736 /* AppDelegate.swift */,
 				997045DB2178DEF000FFB736 /* ViewController.swift */,
 				997045DD2178DEF000FFB736 /* Main.storyboard */,
@@ -153,6 +157,130 @@
 				997045FB2178DEF500FFB736 /* Info.plist */,
 			);
 			path = SwiftyHomeUITests;
+			sourceTree = "<group>";
+		};
+		99704607217986B200FFB736 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		99704608217987B600FFB736 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				99704617217988B600FFB736 /* Utility */,
+				99704616217988AF00FFB736 /* Extension */,
+				9970460E2179880700FFB736 /* Wireframe */,
+				99704607217986B200FFB736 /* Builder */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		99704609217987C300FFB736 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				997046152179886500FFB736 /* Response */,
+				997046122179883700FFB736 /* Entity */,
+				997046102179882300FFB736 /* DataStore */,
+				9970460F2179881C00FFB736 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9970460A217987CF00FFB736 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				997046132179884000FFB736 /* Model */,
+				997046142179884500FFB736 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9970460B217987DA00FFB736 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9970460C217987EC00FFB736 /* Presenter */,
+				9970460D217987FB00FFB736 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9970460C217987EC00FFB736 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9970460D217987FB00FFB736 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9970460E2179880700FFB736 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		9970460F2179881C00FFB736 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		997046102179882300FFB736 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		997046122179883700FFB736 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		997046132179884000FFB736 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		997046142179884500FFB736 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		997046152179886500FFB736 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		99704616217988AF00FFB736 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		99704617217988B600FFB736 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		DFC793980467D308DBC87D42 /* Frameworks */ = {
