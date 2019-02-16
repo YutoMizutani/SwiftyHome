@@ -7,6 +7,7 @@ target 'SwiftyHome' do
   pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxDataSources'
 end
 
 target 'SwiftyHomeTests' do
@@ -23,4 +24,5 @@ target 'SwiftyHomeUITests' do
   pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxDataSources'
 end
