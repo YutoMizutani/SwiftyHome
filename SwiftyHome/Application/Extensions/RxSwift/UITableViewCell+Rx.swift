@@ -50,8 +50,7 @@ extension Reactive where Base: Reusable {
 
 extension Reactive where Base: UITableViewCell {
     var selectionStyle: Binder<UITableViewCell.SelectionStyle> {
-        return Binder(self.base) {
-            cell, selectionStyle in
+        return Binder(self.base) { cell, selectionStyle in
             cell.selectionStyle = selectionStyle
         }
     }

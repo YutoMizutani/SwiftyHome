@@ -6,6 +6,7 @@
 //  Copyright © 2019 Yuto Mizutani. All rights reserved.
 //
 
+import RxDataSources
 import RxSwift
 import UIKit
 
@@ -13,7 +14,7 @@ class CollectionMenuCollectionViewDelegate: NSObject, UICollectionViewDelegate, 
     static let shared = CollectionMenuCollectionViewDelegate()
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 90, height: 120)
+        return CGSize(width: UIScreen.main.bounds.width, height: 60)
     }
 }
 
@@ -56,9 +57,17 @@ class CollectionMenuCollectionView: UICollectionView {
             .disposed(by: disposeBag)
     }
 
-    lazy var configureDataSource = RxCollectionViewSectionedReloadDataSource<SectionOfStory>(configureCell: configureCell)
+    lazy var configureDataSource = RxCollectionViewSectionedReloadDataSource<SectionOfCollectionMenu>(configureCell: configureCell)
 
-    lazy var configureCell: RxCollectionViewSectionedReloadDataSource<SectionOfStory>.ConfigureCell = { [weak self] _, collectionView, indexPath, item in
+    lazy var configureCell: RxCollectionViewSectionedReloadDataSource<SectionOfCollectionMenu>.ConfigureCell = { [weak self] _, collectionView, indexPath, item in
         guard let self = self else { return UICollectionViewCell() }
+        switch item {
+        case .content(let entity):
+            let cell: CollectionMenuCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+            cell.descriptionView.titleLabel.text = entity.title
+            cell.descriptionView.descriptionLabel.text = entity.description
+            cell.descriptionView.optionLabel.text = entity.option
+            return cell
+        }
     }
 }
