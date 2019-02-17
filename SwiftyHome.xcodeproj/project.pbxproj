@@ -36,6 +36,8 @@
 		9979467422183C4400B6EBB3 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979467322183C4400B6EBB3 /* NibLoadable.swift */; };
 		997946792218416900B6EBB3 /* SectionOfCollectionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997946782218416900B6EBB3 /* SectionOfCollectionMenu.swift */; };
 		9979467B221841AF00B6EBB3 /* MenuEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979467A221841AF00B6EBB3 /* MenuEntity.swift */; };
+		9979468D22199B4D00B6EBB3 /* .env.example in Resources */ = {isa = PBXBuildFile; fileRef = 9979468C22199B4D00B6EBB3 /* .env.example */; };
+		9979468F22199B6000B6EBB3 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 9979468E22199B6000B6EBB3 /* .env */; };
 		BD1282A9828BEDD96EB6BACE /* Pods_SwiftyHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0ACB98CAEC9E091C7DF4C9 /* Pods_SwiftyHomeTests.framework */; };
 		C63D0F666DD733C99F182DBE /* Pods_SwiftyHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF635AA7B0871FFD7EAED12 /* Pods_SwiftyHome.framework */; };
 /* End PBXBuildFile section */
@@ -100,6 +102,8 @@
 		9979467322183C4400B6EBB3 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		997946782218416900B6EBB3 /* SectionOfCollectionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfCollectionMenu.swift; sourceTree = "<group>"; };
 		9979467A221841AF00B6EBB3 /* MenuEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEntity.swift; sourceTree = "<group>"; };
+		9979468C22199B4D00B6EBB3 /* .env.example */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env.example; sourceTree = "<group>"; };
+		9979468E22199B6000B6EBB3 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		9C0ACB98CAEC9E091C7DF4C9 /* Pods_SwiftyHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53E108BB7C441CF54155750 /* Pods-SwiftyHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyHomeTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyHomeTests/Pods-SwiftyHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AEA7A756C0A0C662FC95805A /* Pods-SwiftyHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyHomeUITests/Pods-SwiftyHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -352,6 +356,8 @@
 			children = (
 				997045E02178DEF400FFB736 /* Assets.xcassets */,
 				997045E52178DEF400FFB736 /* Info.plist */,
+				9979468C22199B4D00B6EBB3 /* .env.example */,
+				9979468E22199B6000B6EBB3 /* .env */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 997045FE2178DEF500FFB736 /* Build configuration list for PBXNativeTarget "SwiftyHome" */;
 			buildPhases = (
+				9979469022199C7900B6EBB3 /* Run DotEnv Script */,
 				E99236DD1DBB8A63C3884FD8 /* [CP] Check Pods Manifest.lock */,
 				997045D22178DEF000FFB736 /* Sources */,
 				997045D32178DEF000FFB736 /* Frameworks */,
@@ -608,9 +615,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				997045E42178DEF400FFB736 /* LaunchScreen.storyboard in Resources */,
+				9979468D22199B4D00B6EBB3 /* .env.example in Resources */,
 				99794650221830B100B6EBB3 /* CollectionMenuContentView.xib in Resources */,
 				9979466722183A3E00B6EBB3 /* CollectionMenuCollectionView.xib in Resources */,
 				9979464822182F3400B6EBB3 /* CollectionMenuCollectionViewCell.xib in Resources */,
+				9979468F22199B6000B6EBB3 /* .env in Resources */,
 				99794655221832BA00B6EBB3 /* CollectionMenuContentImageView.xib in Resources */,
 				99794663221839EF00B6EBB3 /* CollectionMenuViewController.xib in Resources */,
 				997045E12178DEF400FFB736 /* Assets.xcassets in Resources */,
@@ -734,6 +743,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftyHomeUITests/Pods-SwiftyHomeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9979469022199C7900B6EBB3 /* Run DotEnv Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run DotEnv Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ ! -e \"${PROJECT_DIR}/${PROJECT_NAME}/.env\" ]; then\n  cp \"${PROJECT_DIR}/${PROJECT_NAME}/.env.example\" \"${PROJECT_DIR}/${PROJECT_NAME}/.env\"\nfi\n";
 		};
 		99AF347B217A2A8E00B7A332 /* Swiftlint Script */ = {
 			isa = PBXShellScriptBuildPhase;
