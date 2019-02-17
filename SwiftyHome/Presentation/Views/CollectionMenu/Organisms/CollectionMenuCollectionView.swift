@@ -66,7 +66,7 @@ class CollectionMenuCollectionView: UICollectionView {
             let cell: CollectionMenuCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
             cell.descriptionView.titleLabel.text = entity.title
             cell.descriptionView.descriptionLabel.text = entity.description
-            cell.descriptionView.optionLabel.text = entity.option
+            cell.descriptionView.optionLabel.text = "\(entity.routes.count) routes"
             return cell
         }
     }

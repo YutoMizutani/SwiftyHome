@@ -9,8 +9,12 @@
 import Foundation
 
 struct MenuEntity {
-    var imageURL: URL
     var title: String
     var description: String
-    var option: String
+    var routes: [Route]
+
+    struct Route {
+        var title: String
+        var path: String
+    }
 }
