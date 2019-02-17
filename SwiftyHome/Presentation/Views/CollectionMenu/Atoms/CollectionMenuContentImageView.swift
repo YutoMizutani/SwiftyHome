@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 class CollectionMenuContentImageView: UIImageView {
-    var defaultCornerRadius: CGFloat = 5
+    var defaultCornerRadius: CGFloat = 10
 
     override init(frame: CGRect) {
         super.init(frame: frame)

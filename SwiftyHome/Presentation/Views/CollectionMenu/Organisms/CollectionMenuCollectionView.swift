@@ -14,7 +14,7 @@ class CollectionMenuCollectionViewDelegate: NSObject, UICollectionViewDelegate, 
     static let shared = CollectionMenuCollectionViewDelegate()
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 60)
+        return CGSize(width: UIScreen.main.bounds.width, height: 150)
     }
 }
 
