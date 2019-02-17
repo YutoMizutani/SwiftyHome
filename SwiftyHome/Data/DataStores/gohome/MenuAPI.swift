@@ -10,8 +10,12 @@ import Alamofire
 import RxSwift
 
 struct MenuAPI: GoHomeAPI {
-    typealias ResponseType = MenuResponse
+    typealias ResponseType = [MenuResponse]
 
     var path: String = "/menu"
     var method: HTTPMethod = .get
+
+    func request() -> Single<[MenuEntity]> {
+        return _request().map { $0.map { $0.toEntity() } }
+    }
 }

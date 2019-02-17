@@ -16,12 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        configureEnvfile()
+
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = MainBuilder().build()
+        self.window?.rootViewController = MenuBuilder().build()
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
-
-        configureEnvfile()
 
         return true
     }

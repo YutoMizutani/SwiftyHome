@@ -10,12 +10,10 @@ import Alamofire
 import RxSwift
 
 protocol GoHomeAPI {
-    associatedtype ResponseType: Decodable, EntityTranslatable
+    associatedtype ResponseType: Decodable
 
     var path: String { get set }
     var method: HTTPMethod { get set }
-
-    func request(_ parameters: Parameters?) -> Single<ResponseType.EntityType>
 }
 
 extension GoHomeAPI {
@@ -25,7 +23,11 @@ extension GoHomeAPI {
     private typealias FailureHandler = (_ error: Error) -> Void
 
     private func request(_ parameters: Parameters?, success: SuccessHandler<ResponseType>?, failure: FailureHandler?) {
-        Alamofire.request(ProcessInfo.processInfo.environment["GOHOME_API_ENDPOINT"]! + path,
+        let url = ProcessInfo.processInfo.environment["GOHOME_API_ENDPOINT"]! + path
+
+        print("API CONNECTION OCCURRED: URL=\(url),\tmethod=\(method.rawValue),\tparameters=\(parameters?.description ?? "nil")")
+
+        Alamofire.request(url,
                           method: method,
                           parameters: parameters,
                           encoding: URLEncoding.default)
@@ -42,9 +44,9 @@ extension GoHomeAPI {
             }
     }
 
-    func request(_ parameters: Parameters? = nil) -> Single<ResponseType.EntityType> {
+    func _request(_ parameters: Parameters? = nil) -> Single<ResponseType> {
         return Single.create { single -> Disposable in
-            let success: SuccessHandler<ResponseType> = { single(.success($0.toEntity())) }
+            let success: SuccessHandler<ResponseType> = { single(.success($0)) }
             let failure: FailureHandler = { single(.error($0)) }
             self.request(parameters, success: success, failure: failure)
             return Disposables.create()
