@@ -38,8 +38,8 @@ class CollectionMenuTableView: UITableView {
     }
 
     private func configureView() {
-        rowHeight = 150
-        estimatedRowHeight = 150
+        rowHeight = 100
+        estimatedRowHeight = 100
         register(CollectionMenuTableViewCell.nib, forCellReuseIdentifier: CollectionMenuTableViewCell.reuseIdentifier)
     }
 

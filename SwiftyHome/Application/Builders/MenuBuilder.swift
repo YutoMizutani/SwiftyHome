@@ -22,4 +22,15 @@ struct MenuBuilder {
         )
         return viewController
     }
+
+    func buildWithNavigation() -> UINavigationController {
+        let viewController = build()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.installBlurEffect()
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationItem.largeTitleDisplayMode = .always
+        viewController.title = "Collections"
+        return navigationController
+    }
 }

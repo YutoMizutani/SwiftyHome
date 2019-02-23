@@ -50,6 +50,7 @@
 		99AE467322217167005B6D4E /* CollectionMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AE467122217167005B6D4E /* CollectionMenuTableViewCell.xib */; };
 		99AE467522217233005B6D4E /* CollectionMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE467422217233005B6D4E /* CollectionMenuTableView.swift */; };
 		99AE46772221723B005B6D4E /* CollectionMenuTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AE46762221723B005B6D4E /* CollectionMenuTableView.xib */; };
+		99AE467B222185BC005B6D4E /* UINavigationBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE467A222185BC005B6D4E /* UINavigationBar+.swift */; };
 		BD1282A9828BEDD96EB6BACE /* Pods_SwiftyHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0ACB98CAEC9E091C7DF4C9 /* Pods_SwiftyHomeTests.framework */; };
 		C63D0F666DD733C99F182DBE /* Pods_SwiftyHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF635AA7B0871FFD7EAED12 /* Pods_SwiftyHome.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		99AE467122217167005B6D4E /* CollectionMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionMenuTableViewCell.xib; sourceTree = "<group>"; };
 		99AE467422217233005B6D4E /* CollectionMenuTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuTableView.swift; sourceTree = "<group>"; };
 		99AE46762221723B005B6D4E /* CollectionMenuTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionMenuTableView.xib; sourceTree = "<group>"; };
+		99AE467A222185BC005B6D4E /* UINavigationBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+.swift"; sourceTree = "<group>"; };
 		9C0ACB98CAEC9E091C7DF4C9 /* Pods_SwiftyHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53E108BB7C441CF54155750 /* Pods-SwiftyHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyHomeTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyHomeTests/Pods-SwiftyHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AEA7A756C0A0C662FC95805A /* Pods-SwiftyHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyHomeUITests/Pods-SwiftyHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 			children = (
 				997946522218315D00B6EBB3 /* UIView+.swift */,
 				9979466822183AB300B6EBB3 /* UITableView+.swift */,
+				99AE467A222185BC005B6D4E /* UINavigationBar+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -902,6 +905,7 @@
 				9979467422183C4400B6EBB3 /* NibLoadable.swift in Sources */,
 				99794661221839B900B6EBB3 /* CollectionMenuViewController.swift in Sources */,
 				9979469F2219ADF000B6EBB3 /* CompositeDisposable+.swift in Sources */,
+				99AE467B222185BC005B6D4E /* UINavigationBar+.swift in Sources */,
 				9979467022183B9D00B6EBB3 /* NSObject+.swift in Sources */,
 				99AE467222217167005B6D4E /* CollectionMenuTableViewCell.swift in Sources */,
 				99794682221994A300B6EBB3 /* GoHomeAPI.swift in Sources */,

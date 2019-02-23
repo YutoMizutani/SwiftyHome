@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureEnvfile()
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = MenuBuilder().build()
+        self.window?.rootViewController = MenuBuilder().buildWithNavigation()
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
 
