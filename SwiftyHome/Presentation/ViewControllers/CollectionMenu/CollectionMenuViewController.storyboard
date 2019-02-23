@@ -13,7 +13,7 @@
         <scene sceneID="Zk0-JD-Iq7">
             <objects>
                 <viewController storyboardIdentifier="CollectionMenuViewController" id="Hiw-V5-euZ" customClass="CollectionMenuViewController" customModule="SwiftyHome" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yYq-gI-d0U">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yYq-gI-d0U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -116,12 +116,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2zr-uU-NqY" firstAttribute="bottom" secondItem="5Vz-jz-wWw" secondAttribute="bottom" id="3gN-h3-d3t"/>
-                            <constraint firstItem="5Vz-jz-wWw" firstAttribute="top" secondItem="2zr-uU-NqY" secondAttribute="top" id="Vdv-rl-MDd"/>
-                            <constraint firstItem="5Vz-jz-wWw" firstAttribute="leading" secondItem="2zr-uU-NqY" secondAttribute="leading" id="giP-Dd-Bpm"/>
-                            <constraint firstItem="2zr-uU-NqY" firstAttribute="trailing" secondItem="5Vz-jz-wWw" secondAttribute="trailing" id="iDS-UO-Ppz"/>
+                            <constraint firstAttribute="bottom" secondItem="5Vz-jz-wWw" secondAttribute="bottom" id="3gN-h3-d3t"/>
+                            <constraint firstItem="5Vz-jz-wWw" firstAttribute="top" secondItem="yYq-gI-d0U" secondAttribute="top" id="Vdv-rl-MDd"/>
+                            <constraint firstItem="5Vz-jz-wWw" firstAttribute="leading" secondItem="yYq-gI-d0U" secondAttribute="leading" id="giP-Dd-Bpm"/>
+                            <constraint firstAttribute="trailing" secondItem="5Vz-jz-wWw" secondAttribute="trailing" id="iDS-UO-Ppz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2zr-uU-NqY"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="5Vz-jz-wWw" id="Kyg-6F-WMG"/>
