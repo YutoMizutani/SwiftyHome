@@ -40,6 +40,7 @@ class CollectionMenuTableView: UITableView {
     private func configureView() {
         rowHeight = 100
         estimatedRowHeight = 100
+        separatorInset = UIEdgeInsets(top: 0, left: 100, bottom: 0, right: 0)
         register(CollectionMenuTableViewCell.nib, forCellReuseIdentifier: CollectionMenuTableViewCell.reuseIdentifier)
     }
 
