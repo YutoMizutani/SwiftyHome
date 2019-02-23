@@ -1,15 +1,15 @@
 //
-//  CollectionMenuCollectionViewCell.swift
+//  CollectionMenuTableViewCell.swift
 //  SwiftyHome
 //
-//  Created by Yuto Mizutani on 2019/02/16.
+//  Created by Yuto Mizutani on 2019/02/23.
 //  Copyright © 2019 Yuto Mizutani. All rights reserved.
 //
 
 import UIKit
 
-class CollectionMenuCollectionViewCell: UICollectionViewCell, NibLoadable {
-    @IBOutlet weak var imageView: CollectionMenuContentImageView!
+class CollectionMenuTableViewCell: UITableViewCell, NibLoadable {
+    @IBOutlet weak var thumbnailImageView: CollectionMenuContentImageView!
     @IBOutlet weak var descriptionView: CollectionMenuContentView!
 
     override func prepareForReuse() {
@@ -18,7 +18,7 @@ class CollectionMenuCollectionViewCell: UICollectionViewCell, NibLoadable {
     }
 
     private func reuseView() {
-        imageView.reuseView()
+        thumbnailImageView.reuseView()
         descriptionView.reuseView()
     }
 }

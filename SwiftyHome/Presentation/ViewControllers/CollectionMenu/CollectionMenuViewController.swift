@@ -13,7 +13,7 @@ import UIKit
 class CollectionMenuViewController: UIViewController, StoryboardLoadable {
     typealias ViewModelType = CollectionMenuViewModel
 
-    @IBOutlet weak var collectionView: CollectionMenuCollectionView!
+    @IBOutlet weak var tableView: CollectionMenuTableView!
 
     private var viewModel: ViewModelType?
     private var disposeBag = DisposeBag()
@@ -35,7 +35,7 @@ class CollectionMenuViewController: UIViewController, StoryboardLoadable {
         _ = viewModel.transform(CollectionMenuViewModel.Input(fetchTrigger: fetchTrigger))
 
         viewModel.menus
-            .bind(to: collectionView.rx.items(dataSource: collectionView.configureDataSource))
+            .bind(to: tableView.rx.items(dataSource: tableView.configureDataSource))
             .disposed(by: disposeBag)
     }
 }

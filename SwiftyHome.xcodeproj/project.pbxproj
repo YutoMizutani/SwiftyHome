@@ -16,8 +16,6 @@
 		997045FA2178DEF500FFB736 /* SwiftyHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997045F92178DEF500FFB736 /* SwiftyHomeUITests.swift */; };
 		9970461921798A4400FFB736 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970461821798A4400FFB736 /* MainBuilder.swift */; };
 		9970461C21798CF300FFB736 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9970461B21798CF300FFB736 /* ViewController.storyboard */; };
-		9979464722182F3400B6EBB3 /* CollectionMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979464522182F3400B6EBB3 /* CollectionMenuCollectionViewCell.swift */; };
-		9979464822182F3400B6EBB3 /* CollectionMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9979464622182F3400B6EBB3 /* CollectionMenuCollectionViewCell.xib */; };
 		9979464A2218308000B6EBB3 /* CollectionMenuContentImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997946492218308000B6EBB3 /* CollectionMenuContentImageView.swift */; };
 		9979464E221830A500B6EBB3 /* CollectionMenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979464D221830A500B6EBB3 /* CollectionMenuContentView.swift */; };
 		99794650221830B100B6EBB3 /* CollectionMenuContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9979464F221830B100B6EBB3 /* CollectionMenuContentView.xib */; };
@@ -27,9 +25,7 @@
 		9979465B2218391F00B6EBB3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979465A2218391F00B6EBB3 /* ViewModel.swift */; };
 		9979465D2218393900B6EBB3 /* DeinitDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979465C2218393800B6EBB3 /* DeinitDisposable.swift */; };
 		99794661221839B900B6EBB3 /* CollectionMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99794660221839B900B6EBB3 /* CollectionMenuViewController.swift */; };
-		9979466522183A3300B6EBB3 /* CollectionMenuCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979466422183A3300B6EBB3 /* CollectionMenuCollectionView.swift */; };
-		9979466722183A3E00B6EBB3 /* CollectionMenuCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9979466622183A3E00B6EBB3 /* CollectionMenuCollectionView.xib */; };
-		9979466922183AB300B6EBB3 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979466822183AB300B6EBB3 /* UICollectionView+.swift */; };
+		9979466922183AB300B6EBB3 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979466822183AB300B6EBB3 /* UITableView+.swift */; };
 		9979466E22183B5200B6EBB3 /* UITableViewCell+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979466D22183B5200B6EBB3 /* UITableViewCell+Rx.swift */; };
 		9979467022183B9D00B6EBB3 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979466F22183B9D00B6EBB3 /* NSObject+.swift */; };
 		9979467422183C4400B6EBB3 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979467322183C4400B6EBB3 /* NibLoadable.swift */; };
@@ -50,6 +46,10 @@
 		997946A32219AEAD00B6EBB3 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997946A22219AEAD00B6EBB3 /* StoryboardLoadable.swift */; };
 		997946A52219AFD900B6EBB3 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997946A42219AFD900B6EBB3 /* UIViewController+Rx.swift */; };
 		997946A72219B00300B6EBB3 /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997946A62219B00300B6EBB3 /* ObservableType+.swift */; };
+		99AE467222217167005B6D4E /* CollectionMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE467022217167005B6D4E /* CollectionMenuTableViewCell.swift */; };
+		99AE467322217167005B6D4E /* CollectionMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AE467122217167005B6D4E /* CollectionMenuTableViewCell.xib */; };
+		99AE467522217233005B6D4E /* CollectionMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE467422217233005B6D4E /* CollectionMenuTableView.swift */; };
+		99AE46772221723B005B6D4E /* CollectionMenuTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AE46762221723B005B6D4E /* CollectionMenuTableView.xib */; };
 		BD1282A9828BEDD96EB6BACE /* Pods_SwiftyHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0ACB98CAEC9E091C7DF4C9 /* Pods_SwiftyHomeTests.framework */; };
 		C63D0F666DD733C99F182DBE /* Pods_SwiftyHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF635AA7B0871FFD7EAED12 /* Pods_SwiftyHome.framework */; };
 /* End PBXBuildFile section */
@@ -94,8 +94,6 @@
 		997045FB2178DEF500FFB736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9970461821798A4400FFB736 /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		9970461B21798CF300FFB736 /* ViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewController.storyboard; sourceTree = "<group>"; };
-		9979464522182F3400B6EBB3 /* CollectionMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuCollectionViewCell.swift; sourceTree = "<group>"; };
-		9979464622182F3400B6EBB3 /* CollectionMenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionMenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		997946492218308000B6EBB3 /* CollectionMenuContentImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuContentImageView.swift; sourceTree = "<group>"; };
 		9979464D221830A500B6EBB3 /* CollectionMenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuContentView.swift; sourceTree = "<group>"; };
 		9979464F221830B100B6EBB3 /* CollectionMenuContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionMenuContentView.xib; sourceTree = "<group>"; };
@@ -105,9 +103,7 @@
 		9979465A2218391F00B6EBB3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9979465C2218393800B6EBB3 /* DeinitDisposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeinitDisposable.swift; sourceTree = "<group>"; };
 		99794660221839B900B6EBB3 /* CollectionMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuViewController.swift; sourceTree = "<group>"; };
-		9979466422183A3300B6EBB3 /* CollectionMenuCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuCollectionView.swift; sourceTree = "<group>"; };
-		9979466622183A3E00B6EBB3 /* CollectionMenuCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionMenuCollectionView.xib; sourceTree = "<group>"; };
-		9979466822183AB300B6EBB3 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
+		9979466822183AB300B6EBB3 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		9979466D22183B5200B6EBB3 /* UITableViewCell+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Rx.swift"; sourceTree = "<group>"; };
 		9979466F22183B9D00B6EBB3 /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		9979467322183C4400B6EBB3 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
@@ -128,6 +124,10 @@
 		997946A22219AEAD00B6EBB3 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
 		997946A42219AFD900B6EBB3 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		997946A62219B00300B6EBB3 /* ObservableType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+.swift"; sourceTree = "<group>"; };
+		99AE467022217167005B6D4E /* CollectionMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuTableViewCell.swift; sourceTree = "<group>"; };
+		99AE467122217167005B6D4E /* CollectionMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionMenuTableViewCell.xib; sourceTree = "<group>"; };
+		99AE467422217233005B6D4E /* CollectionMenuTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuTableView.swift; sourceTree = "<group>"; };
+		99AE46762221723B005B6D4E /* CollectionMenuTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionMenuTableView.xib; sourceTree = "<group>"; };
 		9C0ACB98CAEC9E091C7DF4C9 /* Pods_SwiftyHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53E108BB7C441CF54155750 /* Pods-SwiftyHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyHomeTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyHomeTests/Pods-SwiftyHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AEA7A756C0A0C662FC95805A /* Pods-SwiftyHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyHomeUITests/Pods-SwiftyHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -432,8 +432,8 @@
 		9979464322182DA000B6EBB3 /* Molecules */ = {
 			isa = PBXGroup;
 			children = (
-				9979464522182F3400B6EBB3 /* CollectionMenuCollectionViewCell.swift */,
-				9979464622182F3400B6EBB3 /* CollectionMenuCollectionViewCell.xib */,
+				99AE467022217167005B6D4E /* CollectionMenuTableViewCell.swift */,
+				99AE467122217167005B6D4E /* CollectionMenuTableViewCell.xib */,
 			);
 			path = Molecules;
 			sourceTree = "<group>";
@@ -441,8 +441,8 @@
 		9979464422182DC700B6EBB3 /* Organisms */ = {
 			isa = PBXGroup;
 			children = (
-				9979466422183A3300B6EBB3 /* CollectionMenuCollectionView.swift */,
-				9979466622183A3E00B6EBB3 /* CollectionMenuCollectionView.xib */,
+				99AE467422217233005B6D4E /* CollectionMenuTableView.swift */,
+				99AE46762221723B005B6D4E /* CollectionMenuTableView.xib */,
 			);
 			path = Organisms;
 			sourceTree = "<group>";
@@ -451,7 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				997946522218315D00B6EBB3 /* UIView+.swift */,
-				9979466822183AB300B6EBB3 /* UICollectionView+.swift */,
+				9979466822183AB300B6EBB3 /* UITableView+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -661,8 +661,8 @@
 				997045E42178DEF400FFB736 /* LaunchScreen.storyboard in Resources */,
 				9979468D22199B4D00B6EBB3 /* .env.example in Resources */,
 				99794650221830B100B6EBB3 /* CollectionMenuContentView.xib in Resources */,
-				9979466722183A3E00B6EBB3 /* CollectionMenuCollectionView.xib in Resources */,
-				9979464822182F3400B6EBB3 /* CollectionMenuCollectionViewCell.xib in Resources */,
+				99AE46772221723B005B6D4E /* CollectionMenuTableView.xib in Resources */,
+				99AE467322217167005B6D4E /* CollectionMenuTableViewCell.xib in Resources */,
 				9979468F22199B6000B6EBB3 /* .env in Resources */,
 				99794655221832BA00B6EBB3 /* CollectionMenuContentImageView.xib in Resources */,
 				997045E12178DEF400FFB736 /* Assets.xcassets in Resources */,
@@ -884,7 +884,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				997946942219A37E00B6EBB3 /* AppDelegate+Dotenv.swift in Sources */,
-				9979466922183AB300B6EBB3 /* UICollectionView+.swift in Sources */,
+				9979466922183AB300B6EBB3 /* UITableView+.swift in Sources */,
 				9979466E22183B5200B6EBB3 /* UITableViewCell+Rx.swift in Sources */,
 				9970461921798A4400FFB736 /* MainBuilder.swift in Sources */,
 				997946982219A7EC00B6EBB3 /* MenuRepository.swift in Sources */,
@@ -892,12 +892,10 @@
 				997946A72219B00300B6EBB3 /* ObservableType+.swift in Sources */,
 				9979465B2218391F00B6EBB3 /* ViewModel.swift in Sources */,
 				9979467B221841AF00B6EBB3 /* MenuEntity.swift in Sources */,
-				9979464722182F3400B6EBB3 /* CollectionMenuCollectionViewCell.swift in Sources */,
 				9979467D2219929C00B6EBB3 /* MenuResponse.swift in Sources */,
 				997946532218315D00B6EBB3 /* UIView+.swift in Sources */,
 				997946962219A4E400B6EBB3 /* EntityTranslatable.swift in Sources */,
 				997045DC2178DEF000FFB736 /* ViewController.swift in Sources */,
-				9979466522183A3300B6EBB3 /* CollectionMenuCollectionView.swift in Sources */,
 				9979469C2219A90700B6EBB3 /* MenuBuilder.swift in Sources */,
 				9979464E221830A500B6EBB3 /* CollectionMenuContentView.swift in Sources */,
 				997946A32219AEAD00B6EBB3 /* StoryboardLoadable.swift in Sources */,
@@ -905,11 +903,13 @@
 				99794661221839B900B6EBB3 /* CollectionMenuViewController.swift in Sources */,
 				9979469F2219ADF000B6EBB3 /* CompositeDisposable+.swift in Sources */,
 				9979467022183B9D00B6EBB3 /* NSObject+.swift in Sources */,
+				99AE467222217167005B6D4E /* CollectionMenuTableViewCell.swift in Sources */,
 				99794682221994A300B6EBB3 /* GoHomeAPI.swift in Sources */,
 				9979465D2218393900B6EBB3 /* DeinitDisposable.swift in Sources */,
 				997946A52219AFD900B6EBB3 /* UIViewController+Rx.swift in Sources */,
 				99794657221838EB00B6EBB3 /* CollectionMenuViewModel.swift in Sources */,
 				997045DA2178DEF000FFB736 /* AppDelegate.swift in Sources */,
+				99AE467522217233005B6D4E /* CollectionMenuTableView.swift in Sources */,
 				9979464A2218308000B6EBB3 /* CollectionMenuContentImageView.swift in Sources */,
 				997946802219942400B6EBB3 /* MenuAPI.swift in Sources */,
 				9979469A2219A8A900B6EBB3 /* MenuUseCase.swift in Sources */,
