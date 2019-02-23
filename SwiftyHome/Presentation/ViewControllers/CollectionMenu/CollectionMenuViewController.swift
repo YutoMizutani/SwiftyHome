@@ -30,9 +30,9 @@ class CollectionMenuViewController: UIViewController, StoryboardLoadable {
     private func configureViewModel() {
         guard let viewModel = viewModel else { return }
 
-        let fetchTrigger: Driver<Void> = rx.viewDidLoadAndNow.asDriverOnErrorJustComplete()
+        let getContentsTrigger: Driver<Void> = rx.viewDidAppear.mapToVoid().asDriverOnErrorJustComplete()
 
-        _ = viewModel.transform(CollectionMenuViewModel.Input(fetchTrigger: fetchTrigger))
+        _ = viewModel.transform(CollectionMenuViewModel.Input(getContentsTrigger: getContentsTrigger))
 
         viewModel.menus
             .bind(to: tableView.rx.items(dataSource: tableView.configureDataSource))

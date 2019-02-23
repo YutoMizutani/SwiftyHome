@@ -14,22 +14,23 @@ class CollectionMenuViewModel: DeinitDisposable, ViewModel {
 
     private let useCase: UseCaseType
 
+    private let items: [SectionOfCollectionMenu] = CollectionMenuType.allCases.map { [$0] }
+        .map { SectionOfCollectionMenu(items: $0) }
+
     init(useCase: UseCaseType) {
         self.useCase = useCase
     }
 
     struct Input {
-        let fetchTrigger: Driver<Void>
+        let getContentsTrigger: Driver<Void>
     }
     struct Output {}
 
     var menus: PublishSubject<[SectionOfCollectionMenu]> = PublishSubject()
 
     func transform(_ input: CollectionMenuViewModel.Input) -> CollectionMenuViewModel.Output {
-        input.fetchTrigger.asObservable()
-            .flatMapLatest { [unowned self] in self.useCase.fetch() }
-            .map { $0.map { CollectionMenuType.content($0) } }
-            .map { [SectionOfCollectionMenu(items: $0)] }
+        input.getContentsTrigger.asObservable()
+            .map { [weak self] in self?.items ?? [] }
             .bind(to: menus)
             .disposed(by: compositeDisposable)
 

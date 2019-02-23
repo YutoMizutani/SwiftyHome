@@ -10,8 +10,6 @@ import UIKit
 
 @IBDesignable
 class CollectionMenuContentImageView: UIImageView {
-    var defaultCornerRadius: CGFloat = 10
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
@@ -27,9 +25,7 @@ class CollectionMenuContentImageView: UIImageView {
     }
 
     private func configureView() {
-        backgroundColor = .lightGray
         contentMode = .scaleAspectFill
-        cornerRadius = cornerRadius == 0 ? defaultCornerRadius : cornerRadius
     }
 
     func reuseView() {

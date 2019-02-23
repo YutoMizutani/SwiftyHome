@@ -8,10 +8,6 @@
 
 import RxDataSources
 
-enum CollectionMenuType {
-    case content(MenuEntity)
-}
-
 struct SectionOfCollectionMenu {
     var items: [CollectionMenuType]
 }

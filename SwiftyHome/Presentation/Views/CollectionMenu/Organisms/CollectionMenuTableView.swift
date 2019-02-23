@@ -51,15 +51,13 @@ class CollectionMenuTableView: UITableView {
 
     lazy var configureDataSource = RxTableViewSectionedReloadDataSource<SectionOfCollectionMenu>(configureCell: configureCell)
 
-    lazy var configureCell: RxTableViewSectionedReloadDataSource<SectionOfCollectionMenu>.ConfigureCell = { [weak self] _, collectionView, indexPath, item in
+    lazy var configureCell: RxTableViewSectionedReloadDataSource<SectionOfCollectionMenu>.ConfigureCell = { [weak self] _, tableView, indexPath, item in
         guard let self = self else { return UITableViewCell() }
-        switch item {
-        case .content(let entity):
-            let cell: CollectionMenuTableViewCell = collectionView.dequeueReusableCell(for: indexPath)
-            cell.descriptionView.titleLabel.text = entity.title
-            cell.descriptionView.descriptionLabel.text = entity.description
-            cell.descriptionView.optionLabel.text = "\(entity.routes.count) routes"
-            return cell
-        }
+        let cell: CollectionMenuTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.thumbnailImageView.image = item.image
+        cell.descriptionView.titleLabel.text = item.title
+        cell.descriptionView.descriptionLabel.text = item.description
+        cell.descriptionView.optionLabel.text = "0 routes"
+        return cell
     }
 }
