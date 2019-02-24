@@ -6,11 +6,14 @@
 //  Copyright © 2019 Yuto Mizutani. All rights reserved.
 //
 
+import RxSwift
 import UIKit
 
 class AddTodoView: UIView {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
+
+    var disposeBag = DisposeBag()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -39,5 +42,7 @@ class AddTodoView: UIView {
     }
 
     private func configureView() {
+        descriptionTextView.configurePlaceholder("Description")
+            .disposed(by: disposeBag)
     }
 }
