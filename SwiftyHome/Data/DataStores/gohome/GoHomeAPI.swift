@@ -35,6 +35,9 @@ extension GoHomeAPI {
                 switch $0.result {
                 case .success:
                     guard let data = $0.data else { return }
+
+                    print("RECEIVED JSON: \(String(data: data, encoding: .utf8) ?? "")")
+
                     let decoder: JSONDecoder = JSONDecoder()
                     guard let response: ResponseType = try? decoder.decode(ResponseType.self, from: data) else { return }
                     success?(response)
