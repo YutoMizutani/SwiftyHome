@@ -37,6 +37,7 @@ class AddTodoTableView: UITableView {
     lazy var configureCell: RxTableViewSectionedReloadDataSource<SectionOfAddTodo>.ConfigureCell = { [weak self] _, tableView, indexPath, item in
         guard let self = self else { return UITableViewCell() }
         let cell: AddTodoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.addTodoView.descriptionTextView.rx.didChange.asObservable()
             .subscribe(onNext: {
                 // The cursor overlaps and disappears the lowermost area during animations of expanding text area

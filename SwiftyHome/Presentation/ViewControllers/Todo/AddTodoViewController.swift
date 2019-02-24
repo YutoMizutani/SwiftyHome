@@ -39,7 +39,7 @@ class AddTodoViewController: UIViewController, StoryboardLoadable {
             })
             .disposed(by: disposeBag)
 
-        rx.viewDidAppear.mapToVoid()
+        rx.viewDidLoadAndNow
             .map { [SectionOfAddTodo(items: [AddTodoType.core])] }
             .observeOn(MainScheduler.asyncInstance)
             .bind(to: tableView.rx.items(dataSource: tableView.configureDataSource))
