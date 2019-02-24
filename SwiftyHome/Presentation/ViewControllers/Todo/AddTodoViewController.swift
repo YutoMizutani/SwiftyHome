@@ -22,7 +22,7 @@ class AddTodoViewController: UIViewController, StoryboardLoadable {
     }
 
     private func configureView() {
-        title = CollectionMenuType.todos.title
+        title = "Add new todo"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: nil)
     }
