@@ -16,6 +16,7 @@ struct CreateTodoAPI: GoHomeAPI {
     let method: HTTPMethod = .post
 
     func request(_ postEntity: PostTodoEntity) -> Single<ResponseType.EntityType> {
-        return _request().map { $0.toEntity() }
+        let parameters: Parameters = postEntity.toParameters()
+        return _request(parameters).map { $0.toEntity() }
     }
 }

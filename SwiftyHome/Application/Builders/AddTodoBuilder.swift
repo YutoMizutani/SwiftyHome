@@ -13,6 +13,15 @@ struct AddTodoBuilder {
         guard let viewController = AddTodoViewController.storyboard else {
             fatalError("Could not create instance of AddTodoViewController")
         }
+
+        viewController.inject(
+            viewModel: AddTodoViewModel(
+                useCase: TodosUseCaseImpl(
+                    repository: TodosRepositoryImpl.shared
+                )
+            )
+        )
+
         let navigationController = UINavigationController(rootViewController: viewController)
         return navigationController
     }

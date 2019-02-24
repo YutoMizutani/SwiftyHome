@@ -11,14 +11,22 @@ import RxSwift
 import UIKit
 
 class AddTodoViewController: UIViewController, StoryboardLoadable {
+    typealias ViewModelType = AddTodoViewModel
+
     @IBOutlet weak var tableView: AddTodoTableView!
 
+    private var viewModel: ViewModelType?
     private var disposeBag = DisposeBag()
+
+    func inject(viewModel: ViewModelType) {
+        self.viewModel = viewModel
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         binding()
+        configureViewModel()
     }
 
     private func configureView() {
@@ -31,11 +39,6 @@ class AddTodoViewController: UIViewController, StoryboardLoadable {
         navigationItem.leftBarButtonItem?.rx.tap.asObservable()
             .subscribe(onNext: { [weak self] in
                 self?.dismiss(animated: true, completion: nil)
-            })
-            .disposed(by: disposeBag)
-        navigationItem.rightBarButtonItem?.rx.tap.asObservable()
-            .subscribe(onNext: {
-                print("Done!")
             })
             .disposed(by: disposeBag)
 
@@ -53,5 +56,23 @@ class AddTodoViewController: UIViewController, StoryboardLoadable {
                 .bind(to: rightBarButtonItem.rx.isEnabled)
                 .disposed(by: disposeBag)
         }
+    }
+
+    private func configureViewModel() {
+        guard let viewModel = viewModel, let rightBarButtonItem = navigationItem.rightBarButtonItem else { return }
+
+        let createTrigger: Driver<PostTodoEntity> = rightBarButtonItem.rx.tap.asObservable()
+            .withLatestFrom(tableView.rx.title.startWith(""))
+            .withLatestFrom(tableView.rx.description.startWith("")) { (title: $0, description: $1) }
+            .map { PostTodoEntity(title: $0.title, description: $0.description, tags: [], state: .disabled) }
+            .asDriverOnErrorJustComplete()
+
+        let output = viewModel.transform(AddTodoViewModel.Input(createTrigger: createTrigger))
+
+        output.didCreateTodo.asObservable()
+            .subscribe(onNext: { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
     }
 }

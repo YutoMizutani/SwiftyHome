@@ -40,6 +40,7 @@
 		992D3A7F2222D68A00B58997 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A7E2222D68A00B58997 /* UIColor+.swift */; };
 		992D3A832222FA2E00B58997 /* UITextField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A822222FA2E00B58997 /* UITextField+Rx.swift */; };
 		992D3A852222FAE000B58997 /* RxTextFieldDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A842222FAE000B58997 /* RxTextFieldDelegateProxy.swift */; };
+		992D3A8922230D0F00B58997 /* AddTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A8822230D0F00B58997 /* AddTodoViewModel.swift */; };
 		994695712222A1CC00D5DF26 /* AddTodoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994695702222A1CC00D5DF26 /* AddTodoTableView.swift */; };
 		994695732222A1D700D5DF26 /* AddTodoTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994695722222A1D600D5DF26 /* AddTodoTableView.xib */; };
 		994695762222A35400D5DF26 /* AddTodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994695742222A35400D5DF26 /* AddTodoTableViewCell.swift */; };
@@ -156,6 +157,7 @@
 		992D3A7E2222D68A00B58997 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		992D3A822222FA2E00B58997 /* UITextField+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Rx.swift"; sourceTree = "<group>"; };
 		992D3A842222FAE000B58997 /* RxTextFieldDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTextFieldDelegateProxy.swift; sourceTree = "<group>"; };
+		992D3A8822230D0F00B58997 /* AddTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewModel.swift; sourceTree = "<group>"; };
 		994695702222A1CC00D5DF26 /* AddTodoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoTableView.swift; sourceTree = "<group>"; };
 		994695722222A1D600D5DF26 /* AddTodoTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTodoTableView.xib; sourceTree = "<group>"; };
 		994695742222A35400D5DF26 /* AddTodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoTableViewCell.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 				99794659221838FE00B6EBB3 /* Core */,
 				99794656221838EB00B6EBB3 /* CollectionMenuViewModel.swift */,
 				990CF50C22225D8F00A9D8D3 /* TodoViewModel.swift */,
+				992D3A8822230D0F00B58997 /* AddTodoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1149,6 +1152,7 @@
 				99794661221839B900B6EBB3 /* CollectionMenuViewController.swift in Sources */,
 				9979469F2219ADF000B6EBB3 /* CompositeDisposable+.swift in Sources */,
 				99DA30AC22229B6F00F3867E /* AddTodoViewController.swift in Sources */,
+				992D3A8922230D0F00B58997 /* AddTodoViewModel.swift in Sources */,
 				990CF52E2222765B00A9D8D3 /* TodosBuilder.swift in Sources */,
 				992D3A832222FA2E00B58997 /* UITextField+Rx.swift in Sources */,
 				99AE467B222185BC005B6D4E /* UINavigationBar+.swift in Sources */,

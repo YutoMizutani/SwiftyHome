@@ -13,6 +13,15 @@ struct PostTodoEntity {
     var description: String
     var tags: [String]
     var state: TodoState
+
+    func toParameters() -> [String: Any] {
+        var parameters: [String: Any] = [:]
+        parameters["title"] = title
+        parameters["description"] = description
+        parameters["tags"] = tags
+        parameters["is_done"] = state.isDone
+        return parameters
+    }
 }
 
 struct TodoEntity {

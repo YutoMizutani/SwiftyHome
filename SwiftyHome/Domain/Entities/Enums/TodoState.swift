@@ -21,6 +21,10 @@ enum TodoState {
 }
 
 extension TodoState {
+    var isDone: Bool {
+        return self == .enabled
+    }
+
     var image: UIImage {
         switch self {
         case .enabled:

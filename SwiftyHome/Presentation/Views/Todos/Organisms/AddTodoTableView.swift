@@ -13,8 +13,8 @@ import RxSwift
 import UIKit
 
 class AddTodoTableView: UITableView {
-    /// KVO of todo title is empty
-    fileprivate let titleIsEmpty: PublishSubject<Bool> = PublishSubject()
+    fileprivate let titleSubject: PublishSubject<String> = PublishSubject()
+    fileprivate let descriptionSubject: PublishSubject<String> = PublishSubject()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -65,7 +65,9 @@ class AddTodoTableView: UITableView {
             .disposed(by: cell.rx.reuseBag)
 
         // Expand textview area
-        cell.addTodoView.descriptionTextView.rx.didChange.asObservable()
+        let didChangeDescription = cell.addTodoView.descriptionTextView.rx.didChange.asObservable()
+            .share(replay: 1)
+        didChangeDescription
             .subscribe(onNext: {
                 // The cursor overlaps and disappears the lowermost area during animations of expanding text area
                 // The same solution like with Twitter, LINE, and so on
@@ -78,9 +80,16 @@ class AddTodoTableView: UITableView {
 
         cell.addTodoView.titleTextField.rx.controlEvent([.editingChanged]).startWith(())
             .asObservable()
-            .map { cell.addTodoView.titleTextField.text?.isEmpty ?? true }
+            .map { cell.addTodoView.titleTextField.text ?? "" }
             .subscribe(onNext: { [weak self] in
-                self?.titleIsEmpty.onNext($0)
+                self?.titleSubject.onNext($0)
+            })
+            .disposed(by: cell.rx.reuseBag)
+
+        didChangeDescription
+            .map { cell.addTodoView.descriptionTextView.text ?? "" }
+            .subscribe(onNext: { [weak self] in
+                self?.descriptionSubject.onNext($0)
             })
             .disposed(by: cell.rx.reuseBag)
 
@@ -89,8 +98,16 @@ class AddTodoTableView: UITableView {
 }
 
 extension Reactive where Base: AddTodoTableView {
+    var title: Observable<String> {
+        return base.titleSubject.asObservable().share(replay: 1)
+    }
+
     /// KVO of todo title is empty
     var titleIsEmpty: Observable<Bool> {
-        return base.titleIsEmpty.asObservable().share(replay: 1)
+        return base.titleSubject.map { $0.isEmpty }.asObservable().share(replay: 1)
+    }
+
+    var description: Observable<String> {
+        return base.descriptionSubject.asObservable().share(replay: 1)
     }
 }
