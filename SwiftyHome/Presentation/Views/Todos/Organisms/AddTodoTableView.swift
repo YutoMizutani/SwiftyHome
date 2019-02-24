@@ -27,6 +27,7 @@ class AddTodoTableView: UITableView {
     }
 
     private func configureView() {
+        separatorColor = .clear
         estimatedRowHeight = 1000
         register(AddTodoTableViewCell.nib, forCellReuseIdentifier: AddTodoTableViewCell.reuseIdentifier)
     }
@@ -38,8 +39,12 @@ class AddTodoTableView: UITableView {
         let cell: AddTodoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         cell.addTodoView.descriptionTextView.rx.didChange.asObservable()
             .subscribe(onNext: {
-                tableView.beginUpdates()
-                tableView.endUpdates()
+                // The cursor overlaps and disappears the lowermost area during animations of expanding text area
+                // The same solution like with Twitter, LINE, and so on
+                UIView.performWithoutAnimation {
+                    tableView.beginUpdates()
+                    tableView.endUpdates()
+                }
             })
             .disposed(by: cell.rx.reuseBag)
         return cell

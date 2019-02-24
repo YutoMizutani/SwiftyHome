@@ -34,7 +34,7 @@
                                 <rect key="frame" x="0.0" y="54" width="320" height="1"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZY-G3-m3o">
-                                        <rect key="frame" x="20" y="0.0" width="290" height="1"/>
+                                        <rect key="frame" x="20" y="0.0" width="300" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="kPz-ke-cQY"/>
@@ -61,7 +61,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qZY-xR-98u" firstAttribute="leading" secondItem="exr-Ja-dpx" secondAttribute="leading" id="0KY-V6-ZIW"/>
-                            <constraint firstItem="qEM-Bo-86L" firstAttribute="bottom" secondItem="B9m-Df-JgS" secondAttribute="bottom" id="4Ez-X8-Koc"/>
+                            <constraint firstItem="qEM-Bo-86L" firstAttribute="bottom" secondItem="B9m-Df-JgS" secondAttribute="bottom" constant="20" id="4Ez-X8-Koc"/>
                             <constraint firstItem="B9m-Df-JgS" firstAttribute="leading" secondItem="qEM-Bo-86L" secondAttribute="leading" constant="20" id="Apz-Ti-LO5"/>
                             <constraint firstItem="jpN-dX-OSd" firstAttribute="trailing" secondItem="qEM-Bo-86L" secondAttribute="trailing" constant="20" id="GcL-gw-dfw"/>
                             <constraint firstItem="jpN-dX-OSd" firstAttribute="leading" secondItem="qEM-Bo-86L" secondAttribute="leading" constant="20" id="Lhz-ph-734"/>
