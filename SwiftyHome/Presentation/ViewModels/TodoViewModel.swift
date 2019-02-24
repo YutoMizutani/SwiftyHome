@@ -11,15 +11,19 @@ import RxSwift
 
 class TodosViewModel: DeinitDisposable, ViewModel {
     typealias UseCaseType = TodosUseCase
+    typealias WireframeType = TodosWireframe
 
     private let useCase: UseCaseType
+    private let wireframe: WireframeType
 
-    init(useCase: UseCaseType) {
+    init(useCase: UseCaseType, wireframe: WireframeType) {
         self.useCase = useCase
+        self.wireframe = wireframe
     }
 
     struct Input {
         let getContentsTrigger: Driver<Void>
+        let toAddTodoTrigger: Driver<Void>
     }
     struct Output {}
 
@@ -31,6 +35,11 @@ class TodosViewModel: DeinitDisposable, ViewModel {
             .map { $0.map { SectionOfTodos(items: [$0]) } }
             .bind(to: menus)
             .disposed(by: compositeDisposable)
+
+        input.toAddTodoTrigger.asObservable()
+            .subscribeOn(MainScheduler.asyncInstance)
+            .flatMap { [unowned self] in self.wireframe.toAddTodo() }
+            .subscribeAndDisposed(by: compositeDisposable)
 
         return Output()
     }

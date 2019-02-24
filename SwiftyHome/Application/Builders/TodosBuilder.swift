@@ -17,7 +17,8 @@ struct TodosBuilder {
             viewModel: TodosViewModel(
                 useCase: TodosUseCaseImpl(
                     repository: TodosRepositoryImpl.shared
-                )
+                ),
+                wireframe: TodosWireframeImpl(viewController)
             )
         )
 
