@@ -25,22 +25,21 @@ class TodosViewModel: DeinitDisposable, ViewModel {
         let getContentsTrigger: Driver<Void>
         let toAddTodoTrigger: Driver<Void>
     }
-    struct Output {}
-
-    var menus: PublishSubject<[SectionOfTodos]> = PublishSubject()
+    struct Output {
+        let menus: Driver<[SectionOfTodos]>
+    }
 
     func transform(_ input: TodosViewModel.Input) -> TodosViewModel.Output {
-        input.getContentsTrigger.asObservable()
+        let menus = input.getContentsTrigger.asObservable()
             .flatMap { [unowned self] in self.useCase.fetchAll() }
             .map { $0.map { SectionOfTodos(items: [$0]) } }
-            .bind(to: menus)
-            .disposed(by: compositeDisposable)
+            .asDriverOnErrorJustComplete()
 
         input.toAddTodoTrigger.asObservable()
             .subscribeOn(MainScheduler.asyncInstance)
             .flatMap { [unowned self] in self.wireframe.toAddTodo() }
             .subscribeAndDisposed(by: compositeDisposable)
 
-        return Output()
+        return Output(menus: menus)
     }
 }

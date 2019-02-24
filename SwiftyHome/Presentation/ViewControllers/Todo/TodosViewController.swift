@@ -43,10 +43,10 @@ class TodosViewController: UIViewController, StoryboardLoadable, SwipeDismissabl
         let getContentsTrigger: Driver<Void> = rx.viewDidAppear.mapToVoid().asDriverOnErrorJustComplete()
         let toAddTodoTrigger: Driver<Void> = navigationItem.rightBarButtonItem?.rx.tap.asObservable().asDriverOnErrorJustComplete() ?? .empty()
 
-        _ = viewModel.transform(ViewModelType.Input(getContentsTrigger: getContentsTrigger, toAddTodoTrigger: toAddTodoTrigger))
+        let output = viewModel.transform(ViewModelType.Input(getContentsTrigger: getContentsTrigger, toAddTodoTrigger: toAddTodoTrigger))
 
-        viewModel.menus
-            .bind(to: tableView.rx.items(dataSource: tableView.configureDataSource))
+        output.menus
+            .drive(tableView.rx.items(dataSource: tableView.configureDataSource))
             .disposed(by: disposeBag)
     }
 }
