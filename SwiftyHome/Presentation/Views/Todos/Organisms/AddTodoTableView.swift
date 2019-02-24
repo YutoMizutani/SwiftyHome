@@ -8,6 +8,7 @@
 
 import RxCocoa
 import RxDataSources
+import RxGesture
 import RxSwift
 import UIKit
 
@@ -46,6 +47,13 @@ class AddTodoTableView: UITableView {
                     tableView.beginUpdates()
                     tableView.endUpdates()
                 }
+            })
+            .disposed(by: cell.rx.reuseBag)
+        tableView.rx.tapGesture().when(.recognized)
+            .asObservable().mapToVoid()
+            .subscribe(onNext: {
+                // Show keyboard when the other location tapped
+                cell.addTodoView.descriptionTextView.becomeFirstResponder()
             })
             .disposed(by: cell.rx.reuseBag)
         return cell
