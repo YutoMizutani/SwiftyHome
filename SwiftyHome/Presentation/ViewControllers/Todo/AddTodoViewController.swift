@@ -44,5 +44,14 @@ class AddTodoViewController: UIViewController, StoryboardLoadable {
             .observeOn(MainScheduler.asyncInstance)
             .bind(to: tableView.rx.items(dataSource: tableView.configureDataSource))
             .disposed(by: disposeBag)
+
+        // Enable / disable right bar button item
+        if let rightBarButtonItem = navigationItem.rightBarButtonItem {
+            tableView.rx.titleIsEmpty.asObservable()
+                .distinctUntilChanged()
+                .map(!)
+                .bind(to: rightBarButtonItem.rx.isEnabled)
+                .disposed(by: disposeBag)
+        }
     }
 }

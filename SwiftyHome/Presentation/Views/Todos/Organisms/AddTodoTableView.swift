@@ -13,6 +13,9 @@ import RxSwift
 import UIKit
 
 class AddTodoTableView: UITableView {
+    /// KVO of todo title is empty
+    fileprivate let titleIsEmpty: PublishSubject<Bool> = PublishSubject()
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -73,6 +76,21 @@ class AddTodoTableView: UITableView {
             })
             .disposed(by: cell.rx.reuseBag)
 
+        cell.addTodoView.titleTextField.rx.controlEvent([.editingChanged]).startWith(())
+            .asObservable()
+            .map { cell.addTodoView.titleTextField.text?.isEmpty ?? true }
+            .subscribe(onNext: { [weak self] in
+                self?.titleIsEmpty.onNext($0)
+            })
+            .disposed(by: cell.rx.reuseBag)
+
         return cell
+    }
+}
+
+extension Reactive where Base: AddTodoTableView {
+    /// KVO of todo title is empty
+    var titleIsEmpty: Observable<Bool> {
+        return base.titleIsEmpty.asObservable().share(replay: 1)
     }
 }
