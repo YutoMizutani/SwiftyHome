@@ -38,6 +38,8 @@
 		990CF5322222836100A9D8D3 /* SwipeDismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF5312222836100A9D8D3 /* SwipeDismissable.swift */; };
 		992D3A7D2222D1E400B58997 /* UITextView+RxPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A7C2222D1E400B58997 /* UITextView+RxPlaceholder.swift */; };
 		992D3A7F2222D68A00B58997 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A7E2222D68A00B58997 /* UIColor+.swift */; };
+		992D3A832222FA2E00B58997 /* UITextField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A822222FA2E00B58997 /* UITextField+Rx.swift */; };
+		992D3A852222FAE000B58997 /* RxTextFieldDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A842222FAE000B58997 /* RxTextFieldDelegateProxy.swift */; };
 		994695712222A1CC00D5DF26 /* AddTodoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994695702222A1CC00D5DF26 /* AddTodoTableView.swift */; };
 		994695732222A1D700D5DF26 /* AddTodoTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994695722222A1D600D5DF26 /* AddTodoTableView.xib */; };
 		994695762222A35400D5DF26 /* AddTodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994695742222A35400D5DF26 /* AddTodoTableViewCell.swift */; };
@@ -152,6 +154,8 @@
 		990CF5312222836100A9D8D3 /* SwipeDismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDismissable.swift; sourceTree = "<group>"; };
 		992D3A7C2222D1E400B58997 /* UITextView+RxPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+RxPlaceholder.swift"; sourceTree = "<group>"; };
 		992D3A7E2222D68A00B58997 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		992D3A822222FA2E00B58997 /* UITextField+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Rx.swift"; sourceTree = "<group>"; };
+		992D3A842222FAE000B58997 /* RxTextFieldDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTextFieldDelegateProxy.swift; sourceTree = "<group>"; };
 		994695702222A1CC00D5DF26 /* AddTodoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoTableView.swift; sourceTree = "<group>"; };
 		994695722222A1D600D5DF26 /* AddTodoTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTodoTableView.xib; sourceTree = "<group>"; };
 		994695742222A35400D5DF26 /* AddTodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoTableViewCell.swift; sourceTree = "<group>"; };
@@ -691,6 +695,8 @@
 				997946A42219AFD900B6EBB3 /* UIViewController+Rx.swift */,
 				997946A62219B00300B6EBB3 /* ObservableType+.swift */,
 				992D3A7C2222D1E400B58997 /* UITextView+RxPlaceholder.swift */,
+				992D3A822222FA2E00B58997 /* UITextField+Rx.swift */,
+				992D3A842222FAE000B58997 /* RxTextFieldDelegateProxy.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -1144,10 +1150,12 @@
 				9979469F2219ADF000B6EBB3 /* CompositeDisposable+.swift in Sources */,
 				99DA30AC22229B6F00F3867E /* AddTodoViewController.swift in Sources */,
 				990CF52E2222765B00A9D8D3 /* TodosBuilder.swift in Sources */,
+				992D3A832222FA2E00B58997 /* UITextField+Rx.swift in Sources */,
 				99AE467B222185BC005B6D4E /* UINavigationBar+.swift in Sources */,
 				9979467022183B9D00B6EBB3 /* NSObject+.swift in Sources */,
 				990CF51C22225F6600A9D8D3 /* DeleteTodoAPI.swift in Sources */,
 				994695712222A1CC00D5DF26 /* AddTodoTableView.swift in Sources */,
+				992D3A852222FAE000B58997 /* RxTextFieldDelegateProxy.swift in Sources */,
 				990CF4FF2222544200A9D8D3 /* TodoTableView.swift in Sources */,
 				99AE467222217167005B6D4E /* CollectionMenuTableViewCell.swift in Sources */,
 				992D3A7F2222D68A00B58997 /* UIColor+.swift in Sources */,

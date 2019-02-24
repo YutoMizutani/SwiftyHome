@@ -39,6 +39,29 @@ class AddTodoTableView: UITableView {
         guard let self = self else { return UITableViewCell() }
         let cell: AddTodoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+
+        // Display keyboard
+        tableView.rx.willDisplayCell.asObservable().mapToVoid()
+            .subscribe(onNext: {
+                cell.addTodoView.titleTextField.becomeFirstResponder()
+            })
+            .disposed(by: cell.rx.reuseBag)
+
+        // Next keyboard
+        let nextButtonOfKeyboardsTappedOnTitleTextField = cell.addTodoView.titleTextField.rx.shouldReturn.asObservable()
+            .filter { $0.returnKeyType == .next }
+            .filter { $0 == cell.addTodoView.titleTextField }.mapToVoid()
+        let theOtherTableViewLocationTapped = tableView.rx.tapGesture().when(.recognized).asObservable()
+            .filter { !cell.addTodoView.titleTextField.frame.contains($0.location(in: tableView)) }
+            .mapToVoid()
+        Observable.merge(nextButtonOfKeyboardsTappedOnTitleTextField, theOtherTableViewLocationTapped)
+            .subscribe(onNext: {
+                // Show keyboard of descriptionTextView when next return key or the other location tapped
+                cell.addTodoView.descriptionTextView.becomeFirstResponder()
+            })
+            .disposed(by: cell.rx.reuseBag)
+
+        // Expand textview area
         cell.addTodoView.descriptionTextView.rx.didChange.asObservable()
             .subscribe(onNext: {
                 // The cursor overlaps and disappears the lowermost area during animations of expanding text area
@@ -49,13 +72,7 @@ class AddTodoTableView: UITableView {
                 }
             })
             .disposed(by: cell.rx.reuseBag)
-        tableView.rx.tapGesture().when(.recognized)
-            .asObservable().mapToVoid()
-            .subscribe(onNext: {
-                // Show keyboard when the other location tapped
-                cell.addTodoView.descriptionTextView.becomeFirstResponder()
-            })
-            .disposed(by: cell.rx.reuseBag)
+
         return cell
     }
 }
