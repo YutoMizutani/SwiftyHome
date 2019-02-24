@@ -18,6 +18,24 @@
 		990CF4FC2222534700A9D8D3 /* TodosViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990CF4FB2222534700A9D8D3 /* TodosViewController.storyboard */; };
 		990CF4FF2222544200A9D8D3 /* TodoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF4FE2222544200A9D8D3 /* TodoTableView.swift */; };
 		990CF5012222544B00A9D8D3 /* TodoTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990CF5002222544B00A9D8D3 /* TodoTableView.xib */; };
+		990CF5072222585900A9D8D3 /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF5062222585900A9D8D3 /* TodoEntity.swift */; };
+		990CF5092222598300A9D8D3 /* SectionOfTodos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF5082222598300A9D8D3 /* SectionOfTodos.swift */; };
+		990CF50D22225D8F00A9D8D3 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF50C22225D8F00A9D8D3 /* TodoViewModel.swift */; };
+		990CF50F22225DD600A9D8D3 /* TodosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF50E22225DD600A9D8D3 /* TodosUseCase.swift */; };
+		990CF51122225EC800A9D8D3 /* TodosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51022225EC800A9D8D3 /* TodosRepository.swift */; };
+		990CF51822225F4400A9D8D3 /* CreateTodoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51722225F4400A9D8D3 /* CreateTodoAPI.swift */; };
+		990CF51A22225F5000A9D8D3 /* GetTodoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51922225F5000A9D8D3 /* GetTodoAPI.swift */; };
+		990CF51C22225F6600A9D8D3 /* DeleteTodoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51B22225F6600A9D8D3 /* DeleteTodoAPI.swift */; };
+		990CF51E22225F7000A9D8D3 /* UpdateTodoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51D22225F7000A9D8D3 /* UpdateTodoAPI.swift */; };
+		990CF52022225F7C00A9D8D3 /* DoneTodoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51F22225F7C00A9D8D3 /* DoneTodoAPI.swift */; };
+		990CF522222261EE00A9D8D3 /* GetAllTodosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF521222261EE00A9D8D3 /* GetAllTodosAPI.swift */; };
+		990CF5242222622B00A9D8D3 /* TodoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF5232222622B00A9D8D3 /* TodoResponse.swift */; };
+		990CF527222269BA00A9D8D3 /* Primitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF526222269BA00A9D8D3 /* Primitive.swift */; };
+		990CF529222269C400A9D8D3 /* PrimitiveID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF528222269C400A9D8D3 /* PrimitiveID.swift */; };
+		990CF52B22226DDC00A9D8D3 /* EmptyReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF52A22226DDC00A9D8D3 /* EmptyReponse.swift */; };
+		990CF52E2222765B00A9D8D3 /* TodosBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF52D2222765B00A9D8D3 /* TodosBuilder.swift */; };
+		990CF530222276DF00A9D8D3 /* CollectionMenuWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF52F222276DF00A9D8D3 /* CollectionMenuWireframe.swift */; };
+		990CF5322222836100A9D8D3 /* SwipeDismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF5312222836100A9D8D3 /* SwipeDismissable.swift */; };
 		997045DA2178DEF000FFB736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997045D92178DEF000FFB736 /* AppDelegate.swift */; };
 		997045DC2178DEF000FFB736 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997045DB2178DEF000FFB736 /* ViewController.swift */; };
 		997045E12178DEF400FFB736 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 997045E02178DEF400FFB736 /* Assets.xcassets */; };
@@ -101,6 +119,24 @@
 		990CF4FB2222534700A9D8D3 /* TodosViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodosViewController.storyboard; sourceTree = "<group>"; };
 		990CF4FE2222544200A9D8D3 /* TodoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableView.swift; sourceTree = "<group>"; };
 		990CF5002222544B00A9D8D3 /* TodoTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableView.xib; sourceTree = "<group>"; };
+		990CF5062222585900A9D8D3 /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
+		990CF5082222598300A9D8D3 /* SectionOfTodos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfTodos.swift; sourceTree = "<group>"; };
+		990CF50C22225D8F00A9D8D3 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		990CF50E22225DD600A9D8D3 /* TodosUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosUseCase.swift; sourceTree = "<group>"; };
+		990CF51022225EC800A9D8D3 /* TodosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosRepository.swift; sourceTree = "<group>"; };
+		990CF51722225F4400A9D8D3 /* CreateTodoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoAPI.swift; sourceTree = "<group>"; };
+		990CF51922225F5000A9D8D3 /* GetTodoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTodoAPI.swift; sourceTree = "<group>"; };
+		990CF51B22225F6600A9D8D3 /* DeleteTodoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTodoAPI.swift; sourceTree = "<group>"; };
+		990CF51D22225F7000A9D8D3 /* UpdateTodoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoAPI.swift; sourceTree = "<group>"; };
+		990CF51F22225F7C00A9D8D3 /* DoneTodoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTodoAPI.swift; sourceTree = "<group>"; };
+		990CF521222261EE00A9D8D3 /* GetAllTodosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTodosAPI.swift; sourceTree = "<group>"; };
+		990CF5232222622B00A9D8D3 /* TodoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoResponse.swift; sourceTree = "<group>"; };
+		990CF526222269BA00A9D8D3 /* Primitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitive.swift; sourceTree = "<group>"; };
+		990CF528222269C400A9D8D3 /* PrimitiveID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveID.swift; sourceTree = "<group>"; };
+		990CF52A22226DDC00A9D8D3 /* EmptyReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyReponse.swift; sourceTree = "<group>"; };
+		990CF52D2222765B00A9D8D3 /* TodosBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosBuilder.swift; sourceTree = "<group>"; };
+		990CF52F222276DF00A9D8D3 /* CollectionMenuWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuWireframe.swift; sourceTree = "<group>"; };
+		990CF5312222836100A9D8D3 /* SwipeDismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDismissable.swift; sourceTree = "<group>"; };
 		997045D62178DEF000FFB736 /* SwiftyHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		997045D92178DEF000FFB736 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		997045DB2178DEF000FFB736 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +297,44 @@
 			path = Organisms;
 			sourceTree = "<group>";
 		};
+		990CF51522225F2300A9D8D3 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9979467F2219942400B6EBB3 /* MenuAPI.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		990CF51622225F2D00A9D8D3 /* Todos */ = {
+			isa = PBXGroup;
+			children = (
+				990CF51922225F5000A9D8D3 /* GetTodoAPI.swift */,
+				990CF521222261EE00A9D8D3 /* GetAllTodosAPI.swift */,
+				990CF51722225F4400A9D8D3 /* CreateTodoAPI.swift */,
+				990CF51B22225F6600A9D8D3 /* DeleteTodoAPI.swift */,
+				990CF51D22225F7000A9D8D3 /* UpdateTodoAPI.swift */,
+				990CF51F22225F7C00A9D8D3 /* DoneTodoAPI.swift */,
+			);
+			path = Todos;
+			sourceTree = "<group>";
+		};
+		990CF525222269AF00A9D8D3 /* Primitive */ = {
+			isa = PBXGroup;
+			children = (
+				990CF526222269BA00A9D8D3 /* Primitive.swift */,
+				990CF528222269C400A9D8D3 /* PrimitiveID.swift */,
+			);
+			path = Primitive;
+			sourceTree = "<group>";
+		};
+		990CF52C22226DE100A9D8D3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				990CF52A22226DDC00A9D8D3 /* EmptyReponse.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		997045CD2178DEEF00FFB736 = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +392,7 @@
 			children = (
 				9970461821798A4400FFB736 /* MainBuilder.swift */,
 				9979469B2219A90700B6EBB3 /* MenuBuilder.swift */,
+				990CF52D2222765B00A9D8D3 /* TodosBuilder.swift */,
 			);
 			path = Builders;
 			sourceTree = "<group>";
@@ -370,6 +445,7 @@
 			children = (
 				99794659221838FE00B6EBB3 /* Core */,
 				99794656221838EB00B6EBB3 /* CollectionMenuViewModel.swift */,
+				990CF50C22225D8F00A9D8D3 /* TodoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -387,6 +463,7 @@
 		9970460E2179880700FFB736 /* Wireframes */ = {
 			isa = PBXGroup;
 			children = (
+				990CF52F222276DF00A9D8D3 /* CollectionMenuWireframe.swift */,
 			);
 			path = Wireframes;
 			sourceTree = "<group>";
@@ -395,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				997946972219A7EC00B6EBB3 /* MenuRepository.swift */,
+				990CF51022225EC800A9D8D3 /* TodosRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -410,8 +488,10 @@
 		997046132179884000FFB736 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				990CF525222269AF00A9D8D3 /* Primitive */,
 				990CF4E82221B60100A9D8D3 /* Enums */,
 				9979467A221841AF00B6EBB3 /* MenuEntity.swift */,
+				990CF5062222585900A9D8D3 /* TodoEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -420,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				997946992219A8A900B6EBB3 /* MenuUseCase.swift */,
+				990CF50E22225DD600A9D8D3 /* TodosUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -427,7 +508,9 @@
 		997046152179886500FFB736 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				990CF52C22226DE100A9D8D3 /* Core */,
 				9979467C2219929C00B6EBB3 /* MenuResponse.swift */,
+				990CF5232222622B00A9D8D3 /* TodoResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -585,6 +668,7 @@
 		9979467222183C3200B6EBB3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				990CF5312222836100A9D8D3 /* SwipeDismissable.swift */,
 				9979467322183C4400B6EBB3 /* NibLoadable.swift */,
 				997946A22219AEAD00B6EBB3 /* StoryboardLoadable.swift */,
 				997946952219A4E400B6EBB3 /* EntityTranslatable.swift */,
@@ -596,6 +680,7 @@
 			isa = PBXGroup;
 			children = (
 				997946782218416900B6EBB3 /* SectionOfCollectionMenu.swift */,
+				990CF5082222598300A9D8D3 /* SectionOfTodos.swift */,
 			);
 			path = SectionModels;
 			sourceTree = "<group>";
@@ -604,7 +689,8 @@
 			isa = PBXGroup;
 			children = (
 				99794683221994AF00B6EBB3 /* Core */,
-				9979467F2219942400B6EBB3 /* MenuAPI.swift */,
+				990CF51522225F2300A9D8D3 /* Menu */,
+				990CF51622225F2D00A9D8D3 /* Todos */,
 			);
 			path = gohome;
 			sourceTree = "<group>";
@@ -970,34 +1056,52 @@
 			files = (
 				997946942219A37E00B6EBB3 /* AppDelegate+Dotenv.swift in Sources */,
 				9979466922183AB300B6EBB3 /* UITableView+.swift in Sources */,
+				990CF52022225F7C00A9D8D3 /* DoneTodoAPI.swift in Sources */,
 				9979466E22183B5200B6EBB3 /* UITableViewCell+Rx.swift in Sources */,
 				9970461921798A4400FFB736 /* MainBuilder.swift in Sources */,
+				990CF50F22225DD600A9D8D3 /* TodosUseCase.swift in Sources */,
 				990CF4FA2222533500A9D8D3 /* TodosViewController.swift in Sources */,
 				997946982219A7EC00B6EBB3 /* MenuRepository.swift in Sources */,
 				997946792218416900B6EBB3 /* SectionOfCollectionMenu.swift in Sources */,
+				990CF51E22225F7000A9D8D3 /* UpdateTodoAPI.swift in Sources */,
+				990CF529222269C400A9D8D3 /* PrimitiveID.swift in Sources */,
 				997946A72219B00300B6EBB3 /* ObservableType+.swift in Sources */,
+				990CF522222261EE00A9D8D3 /* GetAllTodosAPI.swift in Sources */,
+				990CF50D22225D8F00A9D8D3 /* TodoViewModel.swift in Sources */,
 				9979465B2218391F00B6EBB3 /* ViewModel.swift in Sources */,
 				9979467B221841AF00B6EBB3 /* MenuEntity.swift in Sources */,
 				990CF4ED22223A6E00A9D8D3 /* TodoView.swift in Sources */,
 				9979467D2219929C00B6EBB3 /* MenuResponse.swift in Sources */,
 				990CF4F422224FDA00A9D8D3 /* TodoTableViewCell.swift in Sources */,
+				990CF5322222836100A9D8D3 /* SwipeDismissable.swift in Sources */,
 				997946532218315D00B6EBB3 /* UIView+.swift in Sources */,
+				990CF527222269BA00A9D8D3 /* Primitive.swift in Sources */,
 				997946962219A4E400B6EBB3 /* EntityTranslatable.swift in Sources */,
 				997045DC2178DEF000FFB736 /* ViewController.swift in Sources */,
 				9979469C2219A90700B6EBB3 /* MenuBuilder.swift in Sources */,
 				990CF4F72222503B00A9D8D3 /* TodoState.swift in Sources */,
+				990CF530222276DF00A9D8D3 /* CollectionMenuWireframe.swift in Sources */,
+				990CF5072222585900A9D8D3 /* TodoEntity.swift in Sources */,
 				9979464E221830A500B6EBB3 /* CollectionMenuContentView.swift in Sources */,
+				990CF51822225F4400A9D8D3 /* CreateTodoAPI.swift in Sources */,
+				990CF5092222598300A9D8D3 /* SectionOfTodos.swift in Sources */,
+				990CF51A22225F5000A9D8D3 /* GetTodoAPI.swift in Sources */,
 				997946A32219AEAD00B6EBB3 /* StoryboardLoadable.swift in Sources */,
 				9979467422183C4400B6EBB3 /* NibLoadable.swift in Sources */,
+				990CF51122225EC800A9D8D3 /* TodosRepository.swift in Sources */,
 				99794661221839B900B6EBB3 /* CollectionMenuViewController.swift in Sources */,
 				9979469F2219ADF000B6EBB3 /* CompositeDisposable+.swift in Sources */,
+				990CF52E2222765B00A9D8D3 /* TodosBuilder.swift in Sources */,
 				99AE467B222185BC005B6D4E /* UINavigationBar+.swift in Sources */,
 				9979467022183B9D00B6EBB3 /* NSObject+.swift in Sources */,
+				990CF51C22225F6600A9D8D3 /* DeleteTodoAPI.swift in Sources */,
 				990CF4FF2222544200A9D8D3 /* TodoTableView.swift in Sources */,
 				99AE467222217167005B6D4E /* CollectionMenuTableViewCell.swift in Sources */,
+				990CF52B22226DDC00A9D8D3 /* EmptyReponse.swift in Sources */,
 				990CF4EA2221B61300A9D8D3 /* CollectionMenuType.swift in Sources */,
 				99794682221994A300B6EBB3 /* GoHomeAPI.swift in Sources */,
 				9979465D2218393900B6EBB3 /* DeinitDisposable.swift in Sources */,
+				990CF5242222622B00A9D8D3 /* TodoResponse.swift in Sources */,
 				997946A52219AFD900B6EBB3 /* UIViewController+Rx.swift in Sources */,
 				99794657221838EB00B6EBB3 /* CollectionMenuViewModel.swift in Sources */,
 				997045DA2178DEF000FFB736 /* AppDelegate.swift in Sources */,

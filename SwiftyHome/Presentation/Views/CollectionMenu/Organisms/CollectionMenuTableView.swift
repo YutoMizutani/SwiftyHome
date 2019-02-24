@@ -11,8 +11,6 @@ import RxSwift
 import UIKit
 
 class CollectionMenuTableView: UITableView {
-    var disposeBag = DisposeBag()
-
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -20,21 +18,11 @@ class CollectionMenuTableView: UITableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureView()
-        binding()
-        layoutView()
     }
 
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         configureView()
-        binding()
-        layoutView()
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layoutView()
-        layoutIfNeeded()
     }
 
     private func configureView() {
@@ -44,17 +32,12 @@ class CollectionMenuTableView: UITableView {
         register(CollectionMenuTableViewCell.nib, forCellReuseIdentifier: CollectionMenuTableViewCell.reuseIdentifier)
     }
 
-    private func layoutView() {
-    }
-
-    private func binding() {
-    }
-
     lazy var configureDataSource = RxTableViewSectionedReloadDataSource<SectionOfCollectionMenu>(configureCell: configureCell)
 
     lazy var configureCell: RxTableViewSectionedReloadDataSource<SectionOfCollectionMenu>.ConfigureCell = { [weak self] _, tableView, indexPath, item in
         guard let self = self else { return UITableViewCell() }
         let cell: CollectionMenuTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.state = item
         cell.thumbnailImageView.image = item.image
         cell.descriptionView.titleLabel.text = item.title
         cell.descriptionView.descriptionLabel.text = item.description

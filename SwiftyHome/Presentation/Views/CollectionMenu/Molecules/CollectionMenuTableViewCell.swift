@@ -12,6 +12,8 @@ class CollectionMenuTableViewCell: UITableViewCell, NibLoadable {
     @IBOutlet weak var thumbnailImageView: CollectionMenuContentImageView!
     @IBOutlet weak var descriptionView: CollectionMenuContentView!
 
+    var state: CollectionMenuType?
+
     override func prepareForReuse() {
         super.prepareForReuse()
         reuseView()

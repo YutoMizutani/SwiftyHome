@@ -12,8 +12,8 @@ import RxSwift
 protocol GoHomeAPI {
     associatedtype ResponseType: Decodable
 
-    var path: String { get set }
-    var method: HTTPMethod { get set }
+    var path: String { get }
+    var method: HTTPMethod { get }
 }
 
 extension GoHomeAPI {
@@ -51,5 +51,7 @@ extension GoHomeAPI {
             self.request(parameters, success: success, failure: failure)
             return Disposables.create()
         }
+        .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
+        .observeOn(MainScheduler.asyncInstance)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodoTableViewCell: UITableViewCell {
+class TodoTableViewCell: UITableViewCell, NibLoadable {
     @IBOutlet weak var todoView: TodoView!
 
     var state: TodoState = .disabled {

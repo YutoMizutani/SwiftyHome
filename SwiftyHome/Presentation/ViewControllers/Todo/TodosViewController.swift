@@ -6,34 +6,46 @@
 //  Copyright © 2019 Yuto Mizutani. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
 
-class TodosViewController: UIViewController {
-//    typealias ViewModelType = MenuViewModel
+class TodosViewController: UIViewController, StoryboardLoadable, SwipeDismissable {
+    typealias ViewModelType = TodosViewModel
 
     @IBOutlet weak var tableView: TodoTableView!
 
-//    private var viewModel: ViewModelType?
-//    private var disposeBag = DisposeBag()
-//
-//    func inject(viewModel: ViewModelType) {
-//        self.viewModel = viewModel
-//    }
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        configureViewModel()
-//    }
-//
-//    private func configureViewModel() {
-//        guard let viewModel = viewModel else { return }
-//
-//        let getContentsTrigger: Driver<Void> = rx.viewDidAppear.mapToVoid().asDriverOnErrorJustComplete()
-//
-//        _ = viewModel.transform(CollectionMenuViewModel.Input(getContentsTrigger: getContentsTrigger))
-//
-//        viewModel.menus
-//            .bind(to: tableView.rx.items(dataSource: tableView.configureDataSource))
-//            .disposed(by: disposeBag)
-//    }
+    private var viewModel: ViewModelType?
+    private var disposeBag = DisposeBag()
+
+    func inject(viewModel: ViewModelType) {
+        self.viewModel = viewModel
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureSwipeDismissing()
+        configureView()
+        configureViewModel()
+    }
+
+    private func configureView() {
+        title = CollectionMenuType.todos.title
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "todo_add")!,
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: nil)
+    }
+
+    private func configureViewModel() {
+        guard let viewModel = viewModel else { return }
+
+        let getContentsTrigger: Driver<Void> = rx.viewDidAppear.mapToVoid().asDriverOnErrorJustComplete()
+
+        _ = viewModel.transform(ViewModelType.Input(getContentsTrigger: getContentsTrigger))
+
+        viewModel.menus
+            .bind(to: tableView.rx.items(dataSource: tableView.configureDataSource))
+            .disposed(by: disposeBag)
+    }
 }
