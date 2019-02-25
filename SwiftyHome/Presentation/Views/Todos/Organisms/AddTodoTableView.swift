@@ -78,7 +78,7 @@ class AddTodoTableView: UITableView {
             })
             .disposed(by: cell.rx.reuseBag)
 
-        cell.addTodoView.titleTextField.rx.controlEvent([.editingChanged]).startWith(())
+        cell.addTodoView.titleTextField.rx.controlEvent(.editingChanged).startWith(())
             .asObservable()
             .map { cell.addTodoView.titleTextField.text ?? "" }
             .subscribe(onNext: { [weak self] in

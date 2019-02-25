@@ -25,7 +25,7 @@ extension GoHomeAPI {
     private func request(_ parameters: Parameters?, success: SuccessHandler<ResponseType>?, failure: FailureHandler?) {
         let url = ProcessInfo.processInfo.environment["GOHOME_API_ENDPOINT"]! + path
 
-        print("API CONNECTION OCCURRED: URL=\(url),\tmethod=\(method.rawValue),\tparameters=\(parameters?.description ?? "nil")")
+        print("API CONNECTION OCCURRED: URL=\(url), method=\(method.rawValue), parameters=\(parameters?.description ?? "nil")")
 
         Alamofire.request(url,
                           method: method,
