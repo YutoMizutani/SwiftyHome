@@ -6,6 +6,7 @@ disabled_rules:
   - identifier_name
   - file_name
   - nesting
+  - private_outlet
 opt_in_rules:
   - array_init
   - attributes
@@ -49,7 +50,7 @@ excluded:
   - SwiftyHomeUITests
 
 line_length: 
-  warning: 160
+  warning: 170
   ignores_comments: true
 type_body_length:
   - 300 # warning
