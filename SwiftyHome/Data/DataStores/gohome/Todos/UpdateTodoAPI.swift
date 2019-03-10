@@ -20,6 +20,7 @@ class UpdateTodoAPI: GoHomeAPI {
 
     func request(_ entity: TodoEntity) -> Single<ResponseType.EntityType> {
         self.id = entity.id
-        return _request().map { $0.toEntity() }
+        return _request(entity.toParameters())
+            .map { $0.toEntity() }
     }
 }

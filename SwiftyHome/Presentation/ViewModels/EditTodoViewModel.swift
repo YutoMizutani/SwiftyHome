@@ -38,13 +38,11 @@ class EditTodoViewModel: DeinitDisposable, ViewModel {
                 var entity = $0.1
                 entity.title = $0.0.title
                 entity.description = $0.0.description
-                entity.tags = $0.0.tags
-                entity.state = $0.0.state
+                entity.tags = $0.0.tags ?? entity.tags
+                entity.state = $0.0.state ?? entity.state
                 return entity
             }
-            .debug()
             .flatMapLatest { [unowned self] in self.useCase.update($0) }
-            .debug()
             .asDriverOnErrorJustComplete()
 
         return Output(entity: entity,

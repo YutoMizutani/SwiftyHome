@@ -57,7 +57,7 @@ class AddTodoViewController: UIViewController, StoryboardLoadable {
         let createTrigger: Driver<PostTodoEntity> = rightBarButtonItem.rx.tap.asObservable()
             .withLatestFrom(tableView.rx.title.startWith(""))
             .withLatestFrom(tableView.rx.description.startWith("")) { (title: $0, description: $1) }
-            .map { PostTodoEntity(title: $0.title, description: $0.description, tags: [], state: .disabled) }
+            .map { PostTodoEntity(title: $0.title, description: $0.description) }
             .asDriverOnErrorJustComplete()
 
         let output = viewModel.transform(AddTodoViewModel.Input(createTrigger: createTrigger))

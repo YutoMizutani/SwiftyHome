@@ -63,7 +63,7 @@ class EditTodoViewController: UIViewController, StoryboardLoadable {
         let editTrigger: Driver<PostTodoEntity> = rightBarButtonItem.rx.tap.asObservable()
             .withLatestFrom(tableView.rx.title)
             .withLatestFrom(tableView.rx.description) { (title: $0, description: $1) }
-            .map { PostTodoEntity(title: $0.title, description: $0.description, tags: [], state: .disabled) }
+            .map { PostTodoEntity(title: $0.title, description: $0.description) }
             .asDriverOnErrorJustComplete()
 
         let output = viewModel.transform(EditTodoViewModel.Input(editTrigger: editTrigger))

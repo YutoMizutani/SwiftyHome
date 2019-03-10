@@ -94,7 +94,7 @@ class EditTodoTableView: UITableView {
             })
             .disposed(by: cell.rx.reuseBag)
 
-        didChangeDescription
+        didChangeDescription.startWith(())
             .map { cell.editTodoView.descriptionTextView.text ?? "" }
             .subscribe(onNext: { [weak self] in
                 self?.descriptionSubject.onNext($0)
