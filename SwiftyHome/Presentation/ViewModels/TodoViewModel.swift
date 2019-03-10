@@ -16,6 +16,8 @@ class TodosViewModel: DeinitDisposable, ViewModel {
     private let useCase: UseCaseType
     private let wireframe: WireframeType
 
+    private let didDelete: PublishRelay<Void> = PublishRelay()
+
     init(useCase: UseCaseType, wireframe: WireframeType) {
         self.useCase = useCase
         self.wireframe = wireframe
@@ -38,8 +40,8 @@ class TodosViewModel: DeinitDisposable, ViewModel {
             .map { [SectionOfTodos(items: $0)] }
             .asDriverOnErrorJustComplete()
 
-        input.getContentsTrigger.asObservable()
-            .flatMap { [unowned self] in self.useCase.fetchAll() }
+        Observable.merge(input.getContentsTrigger.asObservable(), didDelete.asObservable())
+            .flatMapLatest { [unowned self] in self.useCase.fetchAll() }
             .subscribe(onNext: {
                 menuRelay.accept($0.sorted())
             })
@@ -68,7 +70,10 @@ class TodosViewModel: DeinitDisposable, ViewModel {
         input.deleteTodoTrigger.asObservable()
             .withLatestFrom(menuRelay) { $1[$0] }
             .flatMap { [unowned self] in self.useCase.delete($0) }
-            .subscribeAndDisposed(by: compositeDisposable)
+            .subscribe(onNext: { [weak self] in
+                self?.didDelete.accept(())
+            })
+            .disposed(by: compositeDisposable)
 
         input.toAddTodoTrigger.asObservable()
             .subscribeOn(MainScheduler.asyncInstance)

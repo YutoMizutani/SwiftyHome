@@ -18,7 +18,7 @@ protocol GoHomeAPI {
 
 extension GoHomeAPI {
     /// Success handler
-    private typealias SuccessHandler<T> = (_ response: ResponseType) -> Void
+    private typealias SuccessHandler<ResponseType> = (_ response: ResponseType) -> Void
     /// Failure handler
     private typealias FailureHandler = (_ error: Error) -> Void
 
@@ -34,13 +34,26 @@ extension GoHomeAPI {
             .responseData {
                 switch $0.result {
                 case .success:
-                    guard let data = $0.data else { return }
+                    switch self.method {
+                    case .get, .post, .put:
+                        guard let data = $0.data else { return }
 
-                    print("RECEIVED JSON: \(String(data: data, encoding: .utf8) ?? "")")
+                        print("RECEIVED JSON: \(String(data: data, encoding: .utf8) ?? "")")
 
-                    let decoder: JSONDecoder = JSONDecoder()
-                    guard let response: ResponseType = try? decoder.decode(ResponseType.self, from: data) else { return }
-                    success?(response)
+                        let decoder: JSONDecoder = JSONDecoder()
+                        guard let response: ResponseType = try? decoder.decode(ResponseType.self, from: data) else { return }
+                        success?(response)
+                    case .delete:
+                        guard $0.error == nil else {
+                            failure?($0.error!)
+                            return
+                        }
+                        // Delete method returns empty
+                        let response = EmptyResponse() as! ResponseType
+                        success?(response)
+                    default:
+                        fatalError("Could not implemented yet")
+                    }
                 case .failure(let error):
                     failure?(error)
                 }
