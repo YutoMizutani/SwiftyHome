@@ -16,6 +16,9 @@ class EditTodoTableView: UITableView {
     fileprivate let titleSubject: PublishSubject<String> = PublishSubject()
     fileprivate let descriptionSubject: PublishSubject<String> = PublishSubject()
 
+    var titleText: String?
+    var descriptionText: String?
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -45,6 +48,8 @@ class EditTodoTableView: UITableView {
         else { return UITableViewCell() }
         let cell: EditTodoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        cell.editTodoView.titleTextField.text = self.titleText
+        cell.editTodoView.descriptionTextView.text = self.descriptionText
 
         // Display keyboard
         tableView.rx.willDisplayCell.asObservable().mapToVoid()
@@ -88,21 +93,11 @@ class EditTodoTableView: UITableView {
                 self?.titleSubject.onNext($0)
             })
             .disposed(by: cell.rx.reuseBag)
-        tableView.titleSubject
-            .subscribe(onNext: {
-                cell.editTodoView.titleTextField.text = $0
-            })
-            .disposed(by: cell.rx.reuseBag)
 
         didChangeDescription
             .map { cell.editTodoView.descriptionTextView.text ?? "" }
             .subscribe(onNext: { [weak self] in
                 self?.descriptionSubject.onNext($0)
-            })
-            .disposed(by: cell.rx.reuseBag)
-        tableView.descriptionSubject
-            .subscribe(onNext: {
-                cell.editTodoView.descriptionTextView.text = $0
             })
             .disposed(by: cell.rx.reuseBag)
 
@@ -111,8 +106,8 @@ class EditTodoTableView: UITableView {
 }
 
 extension Reactive where Base: EditTodoTableView {
-    var title: PublishSubject<String> {
-        return base.titleSubject
+    var title: Observable<String> {
+        return base.titleSubject.asObservable().share(replay: 1)
     }
 
     /// KVO of todo title is empty
@@ -120,7 +115,7 @@ extension Reactive where Base: EditTodoTableView {
         return base.titleSubject.map { $0.isEmpty }.asObservable().share(replay: 1)
     }
 
-    var description: PublishSubject<String> {
-        return base.descriptionSubject
+    var description: Observable<String> {
+        return base.descriptionSubject.asObservable().share(replay: 1)
     }
 }

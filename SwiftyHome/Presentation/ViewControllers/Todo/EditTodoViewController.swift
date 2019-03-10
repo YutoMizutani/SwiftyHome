@@ -68,16 +68,16 @@ class EditTodoViewController: UIViewController, StoryboardLoadable {
 
         let output = viewModel.transform(EditTodoViewModel.Input(editTrigger: editTrigger))
 
-        Observable.combineLatest(output.entity.asObservable(), rx.viewDidAppear)
-            .map { $0.0.title }
-            .subscribe(onNext: { [weak self] in
-                self?.tableView.rx.title.onNext($0)
+        output.entity
+            .map { $0.title }
+            .drive(onNext: { [weak self] in
+                self?.tableView.titleText = $0
             })
             .disposed(by: disposeBag)
-        Observable.combineLatest(output.entity.asObservable(), rx.viewDidAppear)
-            .map { $0.0.description }
-            .subscribe(onNext: { [weak self] in
-                self?.tableView.rx.description.onNext($0)
+        output.entity
+            .map { $0.description }
+            .drive(onNext: { [weak self] in
+                self?.tableView.descriptionText = $0
             })
             .disposed(by: disposeBag)
 
