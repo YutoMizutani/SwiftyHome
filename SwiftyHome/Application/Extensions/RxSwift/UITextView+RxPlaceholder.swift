@@ -21,7 +21,7 @@ extension UITextView {
         placeHolderLabel.backgroundColor = .clear
         addSubview(placeHolderLabel)
 
-        return rx.didChange.subscribe(onNext: { [weak self] in
+        return rx.text.subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
             if placeholder.isEmpty || !self.text.isEmpty {
                 placeHolderLabel.alpha = 0.0

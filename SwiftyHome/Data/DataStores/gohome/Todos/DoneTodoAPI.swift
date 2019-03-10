@@ -10,20 +10,18 @@ import Alamofire
 import RxSwift
 
 class DoneTodoAPI: GoHomeAPI {
-    typealias ResponseType = EmptyResponse
+    typealias ResponseType = TodoResponse
 
     var path: String {
-        return "/todos/\(id.value)"
+        return "/todo/done/\(id.value)"
     }
     var id: PrimitiveID!
-    var method: HTTPMethod {
-        return isDone ? .delete : .put
-    }
+    let method: HTTPMethod = .put
     var isDone: Bool!
 
     func request(_ id: PrimitiveID, isDone: Bool) -> Single<ResponseType.EntityType> {
         self.id = id
-        self.isDone = isDone
-        return _request().map { $0.toEntity() }
+        let parameters: Parameters = ["is_done": isDone]
+        return _request(parameters).map { $0.toEntity() }
     }
 }

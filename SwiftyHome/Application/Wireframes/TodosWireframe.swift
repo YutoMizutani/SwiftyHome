@@ -11,6 +11,7 @@ import UIKit
 
 protocol TodosWireframe {
     func toAddTodo() -> Single<Void>
+    func toEditTodo(_ entity: TodoEntity) -> Single<Void>
 }
 
 class TodosWireframeImpl: TodosWireframe {
@@ -21,8 +22,14 @@ class TodosWireframeImpl: TodosWireframe {
     }
 
     func toAddTodo() -> Single<Void> {
-        let nextViewController = AddTodoBuilder().buildWithNavigation()
-        viewController?.present(nextViewController, animated: true)
+        let nextViewController = AddTodoBuilder().build()
+        viewController?.navigationController?.pushViewController(nextViewController, animated: true)
+        return Single.just(())
+    }
+
+    func toEditTodo(_ entity: TodoEntity) -> Single<Void> {
+        let nextViewController = EditTodoBuilder().build(entity)
+        viewController?.navigationController?.pushViewController(nextViewController, animated: true)
         return Single.just(())
     }
 }

@@ -13,7 +13,7 @@ protocol TodosUseCase {
     func fetch(_ id: PrimitiveID) -> Single<TodoEntity>
     func create(_ postEntity: PostTodoEntity) -> Single<TodoEntity>
     func update(_ entity: TodoEntity) -> Single<TodoEntity>
-    func done(_ entity: TodoEntity) -> Single<Void>
+    func done(_ entity: TodoEntity) -> Single<TodoEntity>
     func delete(_ entity: TodoEntity) -> Single<Void>
 }
 
@@ -42,7 +42,7 @@ class TodosUseCaseImpl: TodosUseCase {
         return repository.update(entity)
     }
 
-    func done(_ entity: TodoEntity) -> Single<Void> {
+    func done(_ entity: TodoEntity) -> Single<TodoEntity> {
         return repository.done(entity)
     }
 

@@ -1,5 +1,5 @@
 //
-//  AddTodoView.swift
+//  EditTodoView.swift
 //  SwiftyHome
 //
 //  Created by Yuto Mizutani on 2019/02/24.
@@ -9,7 +9,7 @@
 import RxSwift
 import UIKit
 
-class AddTodoView: UIView {
+class EditTodoView: UIView {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
 

@@ -1,8 +1,8 @@
 //
-//  AddTodoViewController.swift
+//  EditTodoViewController.swift
 //  SwiftyHome
 //
-//  Created by Yuto Mizutani on 2019/02/24.
+//  Created by Yuto Mizutani on 2019/03/09.
 //  Copyright © 2019 Yuto Mizutani. All rights reserved.
 //
 
@@ -10,8 +10,8 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-class AddTodoViewController: UIViewController, StoryboardLoadable {
-    typealias ViewModelType = AddTodoViewModel
+class EditTodoViewController: UIViewController, StoryboardLoadable {
+    typealias ViewModelType = EditTodoViewModel
 
     @IBOutlet weak var tableView: EditTodoTableView!
 
@@ -30,11 +30,17 @@ class AddTodoViewController: UIViewController, StoryboardLoadable {
     }
 
     private func configureView() {
-        title = "Add"
+        title = "Edit"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: nil)
     }
 
     private func binding() {
+        navigationItem.leftBarButtonItem?.rx.tap.asObservable()
+            .subscribe(onNext: { [weak self] in
+                self?.dismiss(animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
+
         rx.viewDidLoadAndNow
             .map { [SectionOfEditTodo(items: [EditTodoType.core])] }
             .observeOn(MainScheduler.asyncInstance)
@@ -54,15 +60,29 @@ class AddTodoViewController: UIViewController, StoryboardLoadable {
     private func configureViewModel() {
         guard let viewModel = viewModel, let rightBarButtonItem = navigationItem.rightBarButtonItem else { return }
 
-        let createTrigger: Driver<PostTodoEntity> = rightBarButtonItem.rx.tap.asObservable()
-            .withLatestFrom(tableView.rx.title.startWith(""))
-            .withLatestFrom(tableView.rx.description.startWith("")) { (title: $0, description: $1) }
+        let editTrigger: Driver<PostTodoEntity> = rightBarButtonItem.rx.tap.asObservable()
+            .withLatestFrom(tableView.rx.title)
+            .withLatestFrom(tableView.rx.description) { (title: $0, description: $1) }
             .map { PostTodoEntity(title: $0.title, description: $0.description, tags: [], state: .disabled) }
             .asDriverOnErrorJustComplete()
 
-        let output = viewModel.transform(AddTodoViewModel.Input(createTrigger: createTrigger))
+        let output = viewModel.transform(EditTodoViewModel.Input(editTrigger: editTrigger))
 
-        output.didCreateTodo.asObservable()
+        Observable.combineLatest(output.entity.asObservable(), rx.viewDidAppear)
+            .map { $0.0.title }
+            .subscribe(onNext: { [weak self] in
+                self?.tableView.rx.title.onNext($0)
+            })
+            .disposed(by: disposeBag)
+        Observable.combineLatest(output.entity.asObservable(), rx.viewDidAppear)
+            .map { $0.0.description }
+            .subscribe(onNext: { [weak self] in
+                self?.tableView.rx.description.onNext($0)
+            })
+            .disposed(by: disposeBag)
+
+        output.didUpdate.asObservable()
+            .subscribeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] _ in
                 self?.navigationController?.popViewController(animated: true)
             })

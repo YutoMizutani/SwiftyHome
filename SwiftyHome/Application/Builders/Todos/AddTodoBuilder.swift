@@ -9,7 +9,7 @@
 import UIKit
 
 struct AddTodoBuilder {
-    func buildWithNavigation() -> UINavigationController {
+    func build() -> UIViewController {
         guard let viewController = AddTodoViewController.storyboard else {
             fatalError("Could not create instance of AddTodoViewController")
         }
@@ -22,7 +22,6 @@ struct AddTodoBuilder {
             )
         )
 
-        let navigationController = UINavigationController(rootViewController: viewController)
-        return navigationController
+        return viewController
     }
 }

@@ -1,5 +1,5 @@
 //
-//  AddTodoTableViewCell.swift
+//  EditTodoTableViewCell.swift
 //  SwiftyHome
 //
 //  Created by Yuto Mizutani on 2019/02/24.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class AddTodoTableViewCell: UITableViewCell, NibLoadable {
-    @IBOutlet weak var addTodoView: AddTodoView!
+class EditTodoTableViewCell: UITableViewCell, NibLoadable {
+    @IBOutlet weak var editTodoView: EditTodoView!
 }

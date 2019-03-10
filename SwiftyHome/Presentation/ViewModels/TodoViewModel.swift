@@ -23,21 +23,56 @@ class TodosViewModel: DeinitDisposable, ViewModel {
 
     struct Input {
         let getContentsTrigger: Driver<Void>
+        let doneTodoTrigger: Driver<Int>
         let toAddTodoTrigger: Driver<Void>
+        let toEditTodoTrigger: Driver<Int>
     }
     struct Output {
         let menus: Driver<[SectionOfTodos]>
     }
 
     func transform(_ input: TodosViewModel.Input) -> TodosViewModel.Output {
-        let menus = input.getContentsTrigger.asObservable()
-            .flatMap { [unowned self] in self.useCase.fetchAll() }
-            .map { $0.map { SectionOfTodos(items: [$0]) } }
+        let menuRelay: PublishRelay<[TodoEntity]> = PublishRelay()
+        let menus = menuRelay
+            .map { [SectionOfTodos(items: $0)] }
             .asDriverOnErrorJustComplete()
+
+        input.getContentsTrigger.asObservable()
+            .flatMap { [unowned self] in self.useCase.fetchAll() }
+            .subscribe(onNext: {
+                menuRelay.accept($0.sorted())
+            })
+            .disposed(by: compositeDisposable)
+
+        let doneEntity: Observable<TodoEntity> = input.doneTodoTrigger.asObservable()
+            .withLatestFrom(menuRelay) { $1[$0] }
+            .map { entity -> TodoEntity in
+                var result = entity
+                result.state = TodoState(!result.state.isDone)
+                return result
+            }
+            .share(replay: 1)
+        let expectDoneEntity: Observable<TodoEntity> = doneEntity
+        let fetchResultDoneEntity: Observable<TodoEntity> = doneEntity
+            .flatMap { [unowned self] in self.useCase.done($0) }
+        Observable.merge(expectDoneEntity, fetchResultDoneEntity)
+            .withLatestFrom(menuRelay) { ($0, $1) }
+            .subscribe(onNext: { entity, menus in
+                menuRelay.accept(
+                    (menus.filter { $0.id.value != entity.id.value } + [entity]).sorted()
+                )
+            })
+            .disposed(by: compositeDisposable)
 
         input.toAddTodoTrigger.asObservable()
             .subscribeOn(MainScheduler.asyncInstance)
             .flatMap { [unowned self] in self.wireframe.toAddTodo() }
+            .subscribeAndDisposed(by: compositeDisposable)
+
+        input.toEditTodoTrigger.asObservable()
+            .withLatestFrom(menuRelay) { $1[$0] }
+            .subscribeOn(MainScheduler.asyncInstance)
+            .flatMap { [unowned self] in self.wireframe.toEditTodo($0) }
             .subscribeAndDisposed(by: compositeDisposable)
 
         return Output(menus: menus)

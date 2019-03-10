@@ -1,5 +1,5 @@
 //
-//  AddTodoTableView.swift
+//  EditTodoTableView.swift
 //  SwiftyHome
 //
 //  Created by Yuto Mizutani on 2019/02/24.
@@ -12,7 +12,7 @@ import RxGesture
 import RxSwift
 import UIKit
 
-class AddTodoTableView: UITableView {
+class EditTodoTableView: UITableView {
     fileprivate let titleSubject: PublishSubject<String> = PublishSubject()
     fileprivate let descriptionSubject: PublishSubject<String> = PublishSubject()
 
@@ -33,39 +33,42 @@ class AddTodoTableView: UITableView {
     private func configureView() {
         separatorColor = .clear
         estimatedRowHeight = 1000
-        register(AddTodoTableViewCell.nib, forCellReuseIdentifier: AddTodoTableViewCell.reuseIdentifier)
+        register(EditTodoTableViewCell.nib, forCellReuseIdentifier: EditTodoTableViewCell.reuseIdentifier)
     }
 
-    lazy var configureDataSource = RxTableViewSectionedReloadDataSource<SectionOfAddTodo>(configureCell: configureCell)
+    lazy var configureDataSource = RxTableViewSectionedReloadDataSource<SectionOfEditTodo>(configureCell: configureCell)
 
-    lazy var configureCell: RxTableViewSectionedReloadDataSource<SectionOfAddTodo>.ConfigureCell = { [weak self] _, tableView, indexPath, item in
-        guard let self = self else { return UITableViewCell() }
-        let cell: AddTodoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+    lazy var configureCell: RxTableViewSectionedReloadDataSource<SectionOfEditTodo>.ConfigureCell = { [weak self] _, tableView, indexPath, item in
+        guard
+            let self = self,
+            let tableView = tableView as? EditTodoTableView
+        else { return UITableViewCell() }
+        let cell: EditTodoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
 
         // Display keyboard
         tableView.rx.willDisplayCell.asObservable().mapToVoid()
             .subscribe(onNext: {
-                cell.addTodoView.titleTextField.becomeFirstResponder()
+                cell.editTodoView.titleTextField.becomeFirstResponder()
             })
             .disposed(by: cell.rx.reuseBag)
 
         // Next keyboard
-        let nextButtonOfKeyboardsTappedOnTitleTextField = cell.addTodoView.titleTextField.rx.shouldReturn.asObservable()
+        let nextButtonOfKeyboardsTappedOnTitleTextField = cell.editTodoView.titleTextField.rx.shouldReturn.asObservable()
             .filter { $0.returnKeyType == .next }
-            .filter { $0 == cell.addTodoView.titleTextField }.mapToVoid()
+            .filter { $0 == cell.editTodoView.titleTextField }.mapToVoid()
         let theOtherTableViewLocationTapped = tableView.rx.tapGesture().when(.recognized).asObservable()
-            .filter { !cell.addTodoView.titleTextField.frame.contains($0.location(in: tableView)) }
+            .filter { !cell.editTodoView.titleTextField.frame.contains($0.location(in: tableView)) }
             .mapToVoid()
         Observable.merge(nextButtonOfKeyboardsTappedOnTitleTextField, theOtherTableViewLocationTapped)
             .subscribe(onNext: {
                 // Show keyboard of descriptionTextView when next return key or the other location tapped
-                cell.addTodoView.descriptionTextView.becomeFirstResponder()
+                cell.editTodoView.descriptionTextView.becomeFirstResponder()
             })
             .disposed(by: cell.rx.reuseBag)
 
         // Expand textview area
-        let didChangeDescription = cell.addTodoView.descriptionTextView.rx.didChange.asObservable()
+        let didChangeDescription = cell.editTodoView.descriptionTextView.rx.didChange.asObservable()
             .share(replay: 1)
         didChangeDescription
             .subscribe(onNext: {
@@ -78,18 +81,28 @@ class AddTodoTableView: UITableView {
             })
             .disposed(by: cell.rx.reuseBag)
 
-        cell.addTodoView.titleTextField.rx.controlEvent(.editingChanged).startWith(())
+        cell.editTodoView.titleTextField.rx.controlEvent(.editingChanged).startWith(())
             .asObservable()
-            .map { cell.addTodoView.titleTextField.text ?? "" }
+            .map { cell.editTodoView.titleTextField.text ?? "" }
             .subscribe(onNext: { [weak self] in
                 self?.titleSubject.onNext($0)
             })
             .disposed(by: cell.rx.reuseBag)
+        tableView.titleSubject
+            .subscribe(onNext: {
+                cell.editTodoView.titleTextField.text = $0
+            })
+            .disposed(by: cell.rx.reuseBag)
 
         didChangeDescription
-            .map { cell.addTodoView.descriptionTextView.text ?? "" }
+            .map { cell.editTodoView.descriptionTextView.text ?? "" }
             .subscribe(onNext: { [weak self] in
                 self?.descriptionSubject.onNext($0)
+            })
+            .disposed(by: cell.rx.reuseBag)
+        tableView.descriptionSubject
+            .subscribe(onNext: {
+                cell.editTodoView.descriptionTextView.text = $0
             })
             .disposed(by: cell.rx.reuseBag)
 
@@ -97,9 +110,9 @@ class AddTodoTableView: UITableView {
     }
 }
 
-extension Reactive where Base: AddTodoTableView {
-    var title: Observable<String> {
-        return base.titleSubject.asObservable().share(replay: 1)
+extension Reactive where Base: EditTodoTableView {
+    var title: PublishSubject<String> {
+        return base.titleSubject
     }
 
     /// KVO of todo title is empty
@@ -107,7 +120,7 @@ extension Reactive where Base: AddTodoTableView {
         return base.titleSubject.map { $0.isEmpty }.asObservable().share(replay: 1)
     }
 
-    var description: Observable<String> {
-        return base.descriptionSubject.asObservable().share(replay: 1)
+    var description: PublishSubject<String> {
+        return base.descriptionSubject
     }
 }

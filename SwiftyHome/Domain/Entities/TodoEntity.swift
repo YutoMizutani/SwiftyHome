@@ -31,3 +31,9 @@ struct TodoEntity {
     var tags: [String]
     var state: TodoState
 }
+
+extension Array where Element == TodoEntity {
+    func sorted() -> [Element] {
+        return sorted { $0.id.value > $1.id.value }
+    }
+}

@@ -9,33 +9,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Todo View Controller-->
-        <scene sceneID="Jjy-m9-Je1">
+        <!--Edit Todo View Controller-->
+        <scene sceneID="WjU-eR-3sd">
             <objects>
-                <viewController storyboardIdentifier="AddTodoViewController" id="wvC-MZ-rBv" customClass="AddTodoViewController" customModule="SwiftyHome" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tFW-29-Adc">
+                <viewController storyboardIdentifier="EditTodoViewController" id="JKl-sz-Q98" customClass="EditTodoViewController" customModule="SwiftyHome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tlL-uk-hbg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Poa-X2-jeM" customClass="EditTodoTableView" customModule="SwiftyHome" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NGK-A3-n5S" customClass="EditTodoTableView" customModule="SwiftyHome" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Poa-X2-jeM" firstAttribute="centerX" secondItem="tFW-29-Adc" secondAttribute="centerX" id="6R2-4k-JSA"/>
-                            <constraint firstItem="Poa-X2-jeM" firstAttribute="height" secondItem="tFW-29-Adc" secondAttribute="height" id="KVh-LT-CIO"/>
-                            <constraint firstItem="Poa-X2-jeM" firstAttribute="width" secondItem="tFW-29-Adc" secondAttribute="width" id="wLn-xb-msj"/>
-                            <constraint firstItem="Poa-X2-jeM" firstAttribute="centerY" secondItem="tFW-29-Adc" secondAttribute="centerY" id="wZN-rc-onm"/>
+                            <constraint firstItem="NGK-A3-n5S" firstAttribute="width" secondItem="tlL-uk-hbg" secondAttribute="width" id="0An-Co-5Nq"/>
+                            <constraint firstItem="NGK-A3-n5S" firstAttribute="centerY" secondItem="tlL-uk-hbg" secondAttribute="centerY" id="ggp-42-JW8"/>
+                            <constraint firstItem="NGK-A3-n5S" firstAttribute="centerX" secondItem="tlL-uk-hbg" secondAttribute="centerX" id="l5g-eV-YUg"/>
+                            <constraint firstItem="NGK-A3-n5S" firstAttribute="height" secondItem="tlL-uk-hbg" secondAttribute="height" id="vnG-H1-YsK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="LFw-ZU-M0k"/>
+                        <viewLayoutGuide key="safeArea" id="N3a-aT-mbI"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="Poa-X2-jeM" id="pev-t4-b7q"/>
+                        <outlet property="tableView" destination="NGK-A3-n5S" id="5li-Fk-Nxb"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Saf-ZQ-icc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLp-BZ-cPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-302" y="-125"/>
         </scene>
