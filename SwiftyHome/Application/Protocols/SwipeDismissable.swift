@@ -16,7 +16,22 @@ protocol SwipeDismissable {
 extension SwipeDismissable where Self: UIViewController {
     func configureSwipeDismissing() {
         let target = navigationController?.value(forKey: "_cachedInteractionController")
-        let panGestureRecognizercognizer = UIPanGestureRecognizer(target: target, action: Selector(("handleNavigationTransition:")))
-        view.addGestureRecognizer(panGestureRecognizercognizer)
+        let panGestureRecognizer = HorizontalRightToLeftPanGestureRecognizer(target: target, action: Selector(("handleNavigationTransition:")))
+        view.addGestureRecognizer(panGestureRecognizer)
+    }
+}
+
+private class HorizontalRightToLeftPanGestureRecognizer: UIPanGestureRecognizer, UIGestureRecognizerDelegate {
+    override init(target: Any?, action: Selector?) {
+        super.init(target: target, action: action)
+        delegate = self
+    }
+
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        let panGestureRecognizer = gestureRecognizer as! UIPanGestureRecognizer
+        let translation = panGestureRecognizer.translation(in: panGestureRecognizer.view)
+        let isHorizontalSwipe = abs(translation.x) > abs(translation.y)
+        let isRightToLeftSwipe = translation.x > 0
+        return isHorizontalSwipe && isRightToLeftSwipe
     }
 }

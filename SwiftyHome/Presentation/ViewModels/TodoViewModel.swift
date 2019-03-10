@@ -24,6 +24,7 @@ class TodosViewModel: DeinitDisposable, ViewModel {
     struct Input {
         let getContentsTrigger: Driver<Void>
         let doneTodoTrigger: Driver<Int>
+        let deleteTodoTrigger: Driver<Int>
         let toAddTodoTrigger: Driver<Void>
         let toEditTodoTrigger: Driver<Int>
     }
@@ -63,6 +64,11 @@ class TodosViewModel: DeinitDisposable, ViewModel {
                 )
             })
             .disposed(by: compositeDisposable)
+
+        input.deleteTodoTrigger.asObservable()
+            .withLatestFrom(menuRelay) { $1[$0] }
+            .flatMap { [unowned self] in self.useCase.delete($0) }
+            .subscribeAndDisposed(by: compositeDisposable)
 
         input.toAddTodoTrigger.asObservable()
             .subscribeOn(MainScheduler.asyncInstance)
