@@ -12,20 +12,20 @@ import RxSwift
 protocol GoHomeAPI {
     associatedtype ResponseType: Decodable
 
-    var path: String { get set }
-    var method: HTTPMethod { get set }
+    var path: String { get }
+    var method: HTTPMethod { get }
 }
 
 extension GoHomeAPI {
     /// Success handler
-    private typealias SuccessHandler<T> = (_ response: ResponseType) -> Void
+    private typealias SuccessHandler<ResponseType> = (_ response: ResponseType) -> Void
     /// Failure handler
     private typealias FailureHandler = (_ error: Error) -> Void
 
     private func request(_ parameters: Parameters?, success: SuccessHandler<ResponseType>?, failure: FailureHandler?) {
         let url = ProcessInfo.processInfo.environment["GOHOME_API_ENDPOINT"]! + path
 
-        print("API CONNECTION OCCURRED: URL=\(url),\tmethod=\(method.rawValue),\tparameters=\(parameters?.description ?? "nil")")
+        print("API CONNECTION OCCURRED: URL=\(url), method=\(method.rawValue), parameters=\(parameters?.description ?? "nil")")
 
         Alamofire.request(url,
                           method: method,
@@ -34,10 +34,26 @@ extension GoHomeAPI {
             .responseData {
                 switch $0.result {
                 case .success:
-                    guard let data = $0.data else { return }
-                    let decoder: JSONDecoder = JSONDecoder()
-                    guard let response: ResponseType = try? decoder.decode(ResponseType.self, from: data) else { return }
-                    success?(response)
+                    switch self.method {
+                    case .get, .post, .put:
+                        guard let data = $0.data else { return }
+
+                        print("RECEIVED JSON: \(String(data: data, encoding: .utf8) ?? "")")
+
+                        let decoder: JSONDecoder = JSONDecoder()
+                        guard let response: ResponseType = try? decoder.decode(ResponseType.self, from: data) else { return }
+                        success?(response)
+                    case .delete:
+                        guard $0.error == nil else {
+                            failure?($0.error!)
+                            return
+                        }
+                        // Delete method returns empty
+                        let response = EmptyResponse() as! ResponseType
+                        success?(response)
+                    default:
+                        fatalError("Could not implemented yet")
+                    }
                 case .failure(let error):
                     failure?(error)
                 }
@@ -51,5 +67,7 @@ extension GoHomeAPI {
             self.request(parameters, success: success, failure: failure)
             return Disposables.create()
         }
+        .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
+        .observeOn(MainScheduler.asyncInstance)
     }
 }

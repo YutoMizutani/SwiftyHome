@@ -12,10 +12,10 @@ import RxSwift
 struct MenuAPI: GoHomeAPI {
     typealias ResponseType = [MenuResponse]
 
-    var path: String = "/menu"
-    var method: HTTPMethod = .get
+    let path: String = "/menu"
+    let method: HTTPMethod = .get
 
-    func request() -> Single<[MenuEntity]> {
+    func request() -> Single<[ResponseType.Element.EntityType]> {
         return _request().map { $0.map { $0.toEntity() } }
     }
 }

@@ -7,6 +7,9 @@ disabled_rules:
   - file_name
   - nesting
   - private_outlet
+  - type_name
+  - force_cast
+  - attributes
 opt_in_rules:
   - array_init
   - attributes

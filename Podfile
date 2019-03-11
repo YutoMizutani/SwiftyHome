@@ -8,6 +8,7 @@ target 'SwiftyHome' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxDataSources'
+  pod 'RxGesture'
 end
 
 target 'SwiftyHomeTests' do
@@ -25,4 +26,5 @@ target 'SwiftyHomeUITests' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxDataSources'
+  pod 'RxGesture'
 end

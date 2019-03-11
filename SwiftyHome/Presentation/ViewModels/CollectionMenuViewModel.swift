@@ -11,18 +11,22 @@ import RxSwift
 
 class CollectionMenuViewModel: DeinitDisposable, ViewModel {
     typealias UseCaseType = MenuUseCase
+    typealias WireframeType = CollectionMenuWireframe
 
     private let useCase: UseCaseType
+    private let wireframe: WireframeType
 
     private let items: [SectionOfCollectionMenu] = CollectionMenuType.allCases.map { [$0] }
         .map { SectionOfCollectionMenu(items: $0) }
 
-    init(useCase: UseCaseType) {
+    init(useCase: UseCaseType, wireframe: WireframeType) {
         self.useCase = useCase
+        self.wireframe = wireframe
     }
 
     struct Input {
         let getContentsTrigger: Driver<Void>
+        let toTodosTrigger: Driver<Void>
     }
     struct Output {}
 
@@ -33,6 +37,10 @@ class CollectionMenuViewModel: DeinitDisposable, ViewModel {
             .map { [weak self] in self?.items ?? [] }
             .bind(to: menus)
             .disposed(by: compositeDisposable)
+
+        input.toTodosTrigger.asObservable()
+            .flatMap { [unowned self] in self.wireframe.toTodos() }
+            .subscribeAndDisposed(by: compositeDisposable)
 
         return Output()
     }

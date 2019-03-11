@@ -9,28 +9,26 @@
 import UIKit
 
 struct MenuBuilder {
-    func build() -> CollectionMenuViewController {
+    func buildWithNavigation() -> UINavigationController {
         guard let viewController = CollectionMenuViewController.storyboard else {
             fatalError("Could not create instance of CollectionMenuViewController")
         }
-        viewController.inject(
-            viewModel: CollectionMenuViewModel(
-                useCase: MenuUseCaseImpl(
-                    repository: MenuRepositoryImpl.shared
-                )
-            )
-        )
-        return viewController
-    }
 
-    func buildWithNavigation() -> UINavigationController {
-        let viewController = build()
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.installBlurEffect()
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.navigationItem.largeTitleDisplayMode = .always
-        viewController.title = "Collections"
+
+        viewController.inject(
+            viewModel: CollectionMenuViewModel(
+                useCase: MenuUseCaseImpl(
+                    repository: MenuRepositoryImpl.shared
+                ),
+                wireframe: CollectionMenuWireframeImpl(navigationController)
+            )
+        )
+
         return navigationController
     }
 }

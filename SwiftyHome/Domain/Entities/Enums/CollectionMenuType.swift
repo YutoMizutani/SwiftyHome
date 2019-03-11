@@ -20,7 +20,7 @@ extension CollectionMenuType {
     var description: String {
         switch self {
         case .todos:
-            return "Todo lists"
+            return "Todo list"
         case .home:
             return "Daily lives contents"
         case .settings:

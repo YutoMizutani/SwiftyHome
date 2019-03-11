@@ -9,6 +9,45 @@
 /* Begin PBXBuildFile section */
 		591F595BE796465AF2B90AAE /* Pods_SwiftyHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E710C17DEB3F36EF28D1BB8 /* Pods_SwiftyHomeUITests.framework */; };
 		990CF4EA2221B61300A9D8D3 /* CollectionMenuType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF4E92221B61300A9D8D3 /* CollectionMenuType.swift */; };
+		990CF4ED22223A6E00A9D8D3 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF4EC22223A6E00A9D8D3 /* TodoView.swift */; };
+		990CF4EF22223A7800A9D8D3 /* TodoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990CF4EE22223A7800A9D8D3 /* TodoView.xib */; };
+		990CF4F422224FDA00A9D8D3 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF4F222224FDA00A9D8D3 /* TodoTableViewCell.swift */; };
+		990CF4F522224FDA00A9D8D3 /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990CF4F322224FDA00A9D8D3 /* TodoTableViewCell.xib */; };
+		990CF4F72222503B00A9D8D3 /* TodoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF4F62222503B00A9D8D3 /* TodoState.swift */; };
+		990CF4FA2222533500A9D8D3 /* TodosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF4F92222533500A9D8D3 /* TodosViewController.swift */; };
+		990CF4FC2222534700A9D8D3 /* TodosViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990CF4FB2222534700A9D8D3 /* TodosViewController.storyboard */; };
+		990CF4FF2222544200A9D8D3 /* TodoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF4FE2222544200A9D8D3 /* TodoTableView.swift */; };
+		990CF5012222544B00A9D8D3 /* TodoTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 990CF5002222544B00A9D8D3 /* TodoTableView.xib */; };
+		990CF5072222585900A9D8D3 /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF5062222585900A9D8D3 /* TodoEntity.swift */; };
+		990CF5092222598300A9D8D3 /* SectionOfTodos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF5082222598300A9D8D3 /* SectionOfTodos.swift */; };
+		990CF50D22225D8F00A9D8D3 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF50C22225D8F00A9D8D3 /* TodoViewModel.swift */; };
+		990CF50F22225DD600A9D8D3 /* TodosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF50E22225DD600A9D8D3 /* TodosUseCase.swift */; };
+		990CF51122225EC800A9D8D3 /* TodosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51022225EC800A9D8D3 /* TodosRepository.swift */; };
+		990CF51822225F4400A9D8D3 /* CreateTodoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51722225F4400A9D8D3 /* CreateTodoAPI.swift */; };
+		990CF51A22225F5000A9D8D3 /* GetTodoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51922225F5000A9D8D3 /* GetTodoAPI.swift */; };
+		990CF51C22225F6600A9D8D3 /* DeleteTodoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51B22225F6600A9D8D3 /* DeleteTodoAPI.swift */; };
+		990CF51E22225F7000A9D8D3 /* UpdateTodoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51D22225F7000A9D8D3 /* UpdateTodoAPI.swift */; };
+		990CF52022225F7C00A9D8D3 /* DoneTodoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF51F22225F7C00A9D8D3 /* DoneTodoAPI.swift */; };
+		990CF522222261EE00A9D8D3 /* GetAllTodosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF521222261EE00A9D8D3 /* GetAllTodosAPI.swift */; };
+		990CF5242222622B00A9D8D3 /* TodoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF5232222622B00A9D8D3 /* TodoResponse.swift */; };
+		990CF527222269BA00A9D8D3 /* Primitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF526222269BA00A9D8D3 /* Primitive.swift */; };
+		990CF529222269C400A9D8D3 /* PrimitiveID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF528222269C400A9D8D3 /* PrimitiveID.swift */; };
+		990CF52B22226DDC00A9D8D3 /* EmptyReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF52A22226DDC00A9D8D3 /* EmptyReponse.swift */; };
+		990CF52E2222765B00A9D8D3 /* TodosBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF52D2222765B00A9D8D3 /* TodosBuilder.swift */; };
+		990CF530222276DF00A9D8D3 /* CollectionMenuWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF52F222276DF00A9D8D3 /* CollectionMenuWireframe.swift */; };
+		990CF5322222836100A9D8D3 /* SwipeDismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990CF5312222836100A9D8D3 /* SwipeDismissable.swift */; };
+		992D3A7D2222D1E400B58997 /* UITextView+RxPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A7C2222D1E400B58997 /* UITextView+RxPlaceholder.swift */; };
+		992D3A7F2222D68A00B58997 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A7E2222D68A00B58997 /* UIColor+.swift */; };
+		992D3A832222FA2E00B58997 /* UITextField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A822222FA2E00B58997 /* UITextField+Rx.swift */; };
+		992D3A852222FAE000B58997 /* RxTextFieldDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A842222FAE000B58997 /* RxTextFieldDelegateProxy.swift */; };
+		992D3A8922230D0F00B58997 /* AddTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D3A8822230D0F00B58997 /* AddTodoViewModel.swift */; };
+		994695712222A1CC00D5DF26 /* EditTodoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994695702222A1CC00D5DF26 /* EditTodoTableView.swift */; };
+		994695732222A1D700D5DF26 /* EditTodoTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994695722222A1D600D5DF26 /* EditTodoTableView.xib */; };
+		994695762222A35400D5DF26 /* EditTodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994695742222A35400D5DF26 /* EditTodoTableViewCell.swift */; };
+		994695772222A35400D5DF26 /* EditTodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994695752222A35400D5DF26 /* EditTodoTableViewCell.xib */; };
+		994695792222A61100D5DF26 /* SectionOfEditTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994695782222A61100D5DF26 /* SectionOfEditTodo.swift */; };
+		9946957B2222AD6700D5DF26 /* AddTodoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9946957A2222AD6700D5DF26 /* AddTodoBuilder.swift */; };
+		9946957D2222ADDA00D5DF26 /* TodosWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9946957C2222ADDA00D5DF26 /* TodosWireframe.swift */; };
 		997045DA2178DEF000FFB736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997045D92178DEF000FFB736 /* AppDelegate.swift */; };
 		997045DC2178DEF000FFB736 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997045DB2178DEF000FFB736 /* ViewController.swift */; };
 		997045E12178DEF400FFB736 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 997045E02178DEF400FFB736 /* Assets.xcassets */; };
@@ -17,6 +56,10 @@
 		997045FA2178DEF500FFB736 /* SwiftyHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997045F92178DEF500FFB736 /* SwiftyHomeUITests.swift */; };
 		9970461921798A4400FFB736 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970461821798A4400FFB736 /* MainBuilder.swift */; };
 		9970461C21798CF300FFB736 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9970461B21798CF300FFB736 /* ViewController.storyboard */; };
+		9973E0202234042A00F73907 /* EditTodoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973E01F2234042A00F73907 /* EditTodoBuilder.swift */; };
+		9973E023223404EF00F73907 /* EditTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973E022223404EF00F73907 /* EditTodoViewModel.swift */; };
+		9973E025223405EB00F73907 /* EditTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973E024223405EB00F73907 /* EditTodoViewController.swift */; };
+		9973E0292234D05500F73907 /* AddTodoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9973E0282234D05500F73907 /* AddTodoViewController.storyboard */; };
 		9979464A2218308000B6EBB3 /* CollectionMenuContentImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997946492218308000B6EBB3 /* CollectionMenuContentImageView.swift */; };
 		9979464E221830A500B6EBB3 /* CollectionMenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9979464D221830A500B6EBB3 /* CollectionMenuContentView.swift */; };
 		99794650221830B100B6EBB3 /* CollectionMenuContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9979464F221830B100B6EBB3 /* CollectionMenuContentView.xib */; };
@@ -52,6 +95,10 @@
 		99AE467522217233005B6D4E /* CollectionMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE467422217233005B6D4E /* CollectionMenuTableView.swift */; };
 		99AE46772221723B005B6D4E /* CollectionMenuTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AE46762221723B005B6D4E /* CollectionMenuTableView.xib */; };
 		99AE467B222185BC005B6D4E /* UINavigationBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AE467A222185BC005B6D4E /* UINavigationBar+.swift */; };
+		99DA30AC22229B6F00F3867E /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DA30AB22229B6F00F3867E /* AddTodoViewController.swift */; };
+		99DA30AE22229B8800F3867E /* EditTodoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99DA30AD22229B8800F3867E /* EditTodoViewController.storyboard */; };
+		99DA30B022229BE300F3867E /* EditTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DA30AF22229BE300F3867E /* EditTodoView.swift */; };
+		99DA30B222229BF500F3867E /* EditTodoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DA30B122229BF500F3867E /* EditTodoView.xib */; };
 		BD1282A9828BEDD96EB6BACE /* Pods_SwiftyHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0ACB98CAEC9E091C7DF4C9 /* Pods_SwiftyHomeTests.framework */; };
 		C63D0F666DD733C99F182DBE /* Pods_SwiftyHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF635AA7B0871FFD7EAED12 /* Pods_SwiftyHome.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +130,45 @@
 		79300E41EDD228A5FD91639F /* Pods-SwiftyHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyHome/Pods-SwiftyHome.debug.xcconfig"; sourceTree = "<group>"; };
 		8AF635AA7B0871FFD7EAED12 /* Pods_SwiftyHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		990CF4E92221B61300A9D8D3 /* CollectionMenuType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuType.swift; sourceTree = "<group>"; };
+		990CF4EC22223A6E00A9D8D3 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		990CF4EE22223A7800A9D8D3 /* TodoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoView.xib; sourceTree = "<group>"; };
+		990CF4F222224FDA00A9D8D3 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		990CF4F322224FDA00A9D8D3 /* TodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
+		990CF4F62222503B00A9D8D3 /* TodoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoState.swift; sourceTree = "<group>"; };
+		990CF4F92222533500A9D8D3 /* TodosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosViewController.swift; sourceTree = "<group>"; };
+		990CF4FB2222534700A9D8D3 /* TodosViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodosViewController.storyboard; sourceTree = "<group>"; };
+		990CF4FE2222544200A9D8D3 /* TodoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableView.swift; sourceTree = "<group>"; };
+		990CF5002222544B00A9D8D3 /* TodoTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableView.xib; sourceTree = "<group>"; };
+		990CF5062222585900A9D8D3 /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
+		990CF5082222598300A9D8D3 /* SectionOfTodos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfTodos.swift; sourceTree = "<group>"; };
+		990CF50C22225D8F00A9D8D3 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		990CF50E22225DD600A9D8D3 /* TodosUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosUseCase.swift; sourceTree = "<group>"; };
+		990CF51022225EC800A9D8D3 /* TodosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosRepository.swift; sourceTree = "<group>"; };
+		990CF51722225F4400A9D8D3 /* CreateTodoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoAPI.swift; sourceTree = "<group>"; };
+		990CF51922225F5000A9D8D3 /* GetTodoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTodoAPI.swift; sourceTree = "<group>"; };
+		990CF51B22225F6600A9D8D3 /* DeleteTodoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTodoAPI.swift; sourceTree = "<group>"; };
+		990CF51D22225F7000A9D8D3 /* UpdateTodoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoAPI.swift; sourceTree = "<group>"; };
+		990CF51F22225F7C00A9D8D3 /* DoneTodoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTodoAPI.swift; sourceTree = "<group>"; };
+		990CF521222261EE00A9D8D3 /* GetAllTodosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTodosAPI.swift; sourceTree = "<group>"; };
+		990CF5232222622B00A9D8D3 /* TodoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoResponse.swift; sourceTree = "<group>"; };
+		990CF526222269BA00A9D8D3 /* Primitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitive.swift; sourceTree = "<group>"; };
+		990CF528222269C400A9D8D3 /* PrimitiveID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveID.swift; sourceTree = "<group>"; };
+		990CF52A22226DDC00A9D8D3 /* EmptyReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyReponse.swift; sourceTree = "<group>"; };
+		990CF52D2222765B00A9D8D3 /* TodosBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosBuilder.swift; sourceTree = "<group>"; };
+		990CF52F222276DF00A9D8D3 /* CollectionMenuWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuWireframe.swift; sourceTree = "<group>"; };
+		990CF5312222836100A9D8D3 /* SwipeDismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDismissable.swift; sourceTree = "<group>"; };
+		992D3A7C2222D1E400B58997 /* UITextView+RxPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+RxPlaceholder.swift"; sourceTree = "<group>"; };
+		992D3A7E2222D68A00B58997 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		992D3A822222FA2E00B58997 /* UITextField+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Rx.swift"; sourceTree = "<group>"; };
+		992D3A842222FAE000B58997 /* RxTextFieldDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTextFieldDelegateProxy.swift; sourceTree = "<group>"; };
+		992D3A8822230D0F00B58997 /* AddTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewModel.swift; sourceTree = "<group>"; };
+		994695702222A1CC00D5DF26 /* EditTodoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoTableView.swift; sourceTree = "<group>"; };
+		994695722222A1D600D5DF26 /* EditTodoTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTodoTableView.xib; sourceTree = "<group>"; };
+		994695742222A35400D5DF26 /* EditTodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoTableViewCell.swift; sourceTree = "<group>"; };
+		994695752222A35400D5DF26 /* EditTodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTodoTableViewCell.xib; sourceTree = "<group>"; };
+		994695782222A61100D5DF26 /* SectionOfEditTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfEditTodo.swift; sourceTree = "<group>"; };
+		9946957A2222AD6700D5DF26 /* AddTodoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoBuilder.swift; sourceTree = "<group>"; };
+		9946957C2222ADDA00D5DF26 /* TodosWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosWireframe.swift; sourceTree = "<group>"; };
 		997045D62178DEF000FFB736 /* SwiftyHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		997045D92178DEF000FFB736 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		997045DB2178DEF000FFB736 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +183,10 @@
 		997045FB2178DEF500FFB736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9970461821798A4400FFB736 /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		9970461B21798CF300FFB736 /* ViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewController.storyboard; sourceTree = "<group>"; };
+		9973E01F2234042A00F73907 /* EditTodoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoBuilder.swift; sourceTree = "<group>"; };
+		9973E022223404EF00F73907 /* EditTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoViewModel.swift; sourceTree = "<group>"; };
+		9973E024223405EB00F73907 /* EditTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoViewController.swift; sourceTree = "<group>"; };
+		9973E0282234D05500F73907 /* AddTodoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTodoViewController.storyboard; sourceTree = "<group>"; };
 		997946492218308000B6EBB3 /* CollectionMenuContentImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuContentImageView.swift; sourceTree = "<group>"; };
 		9979464D221830A500B6EBB3 /* CollectionMenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuContentView.swift; sourceTree = "<group>"; };
 		9979464F221830B100B6EBB3 /* CollectionMenuContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionMenuContentView.xib; sourceTree = "<group>"; };
@@ -132,6 +222,10 @@
 		99AE467422217233005B6D4E /* CollectionMenuTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionMenuTableView.swift; sourceTree = "<group>"; };
 		99AE46762221723B005B6D4E /* CollectionMenuTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionMenuTableView.xib; sourceTree = "<group>"; };
 		99AE467A222185BC005B6D4E /* UINavigationBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+.swift"; sourceTree = "<group>"; };
+		99DA30AB22229B6F00F3867E /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
+		99DA30AD22229B8800F3867E /* EditTodoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditTodoViewController.storyboard; sourceTree = "<group>"; };
+		99DA30AF22229BE300F3867E /* EditTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoView.swift; sourceTree = "<group>"; };
+		99DA30B122229BF500F3867E /* EditTodoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTodoView.xib; sourceTree = "<group>"; };
 		9C0ACB98CAEC9E091C7DF4C9 /* Pods_SwiftyHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53E108BB7C441CF54155750 /* Pods-SwiftyHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyHomeTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyHomeTests/Pods-SwiftyHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AEA7A756C0A0C662FC95805A /* Pods-SwiftyHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyHomeUITests/Pods-SwiftyHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,8 +286,103 @@
 			isa = PBXGroup;
 			children = (
 				990CF4E92221B61300A9D8D3 /* CollectionMenuType.swift */,
+				990CF4F62222503B00A9D8D3 /* TodoState.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		990CF4EB22223A2700A9D8D3 /* Todos */ = {
+			isa = PBXGroup;
+			children = (
+				990CF4F022224F5400A9D8D3 /* Atoms */,
+				990CF4F122224FB400A9D8D3 /* Molecules */,
+				990CF4FD2222543000A9D8D3 /* Organisms */,
+			);
+			path = Todos;
+			sourceTree = "<group>";
+		};
+		990CF4F022224F5400A9D8D3 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				990CF4EC22223A6E00A9D8D3 /* TodoView.swift */,
+				990CF4EE22223A7800A9D8D3 /* TodoView.xib */,
+				99DA30AF22229BE300F3867E /* EditTodoView.swift */,
+				99DA30B122229BF500F3867E /* EditTodoView.xib */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		990CF4F122224FB400A9D8D3 /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				990CF4F222224FDA00A9D8D3 /* TodoTableViewCell.swift */,
+				990CF4F322224FDA00A9D8D3 /* TodoTableViewCell.xib */,
+				994695742222A35400D5DF26 /* EditTodoTableViewCell.swift */,
+				994695752222A35400D5DF26 /* EditTodoTableViewCell.xib */,
+			);
+			path = Molecules;
+			sourceTree = "<group>";
+		};
+		990CF4F8222252FA00A9D8D3 /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				990CF4F92222533500A9D8D3 /* TodosViewController.swift */,
+				990CF4FB2222534700A9D8D3 /* TodosViewController.storyboard */,
+				99DA30AB22229B6F00F3867E /* AddTodoViewController.swift */,
+				9973E0282234D05500F73907 /* AddTodoViewController.storyboard */,
+				9973E024223405EB00F73907 /* EditTodoViewController.swift */,
+				99DA30AD22229B8800F3867E /* EditTodoViewController.storyboard */,
+			);
+			path = Todo;
+			sourceTree = "<group>";
+		};
+		990CF4FD2222543000A9D8D3 /* Organisms */ = {
+			isa = PBXGroup;
+			children = (
+				990CF4FE2222544200A9D8D3 /* TodoTableView.swift */,
+				990CF5002222544B00A9D8D3 /* TodoTableView.xib */,
+				994695702222A1CC00D5DF26 /* EditTodoTableView.swift */,
+				994695722222A1D600D5DF26 /* EditTodoTableView.xib */,
+			);
+			path = Organisms;
+			sourceTree = "<group>";
+		};
+		990CF51522225F2300A9D8D3 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9979467F2219942400B6EBB3 /* MenuAPI.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		990CF51622225F2D00A9D8D3 /* Todos */ = {
+			isa = PBXGroup;
+			children = (
+				990CF51922225F5000A9D8D3 /* GetTodoAPI.swift */,
+				990CF521222261EE00A9D8D3 /* GetAllTodosAPI.swift */,
+				990CF51722225F4400A9D8D3 /* CreateTodoAPI.swift */,
+				990CF51B22225F6600A9D8D3 /* DeleteTodoAPI.swift */,
+				990CF51D22225F7000A9D8D3 /* UpdateTodoAPI.swift */,
+				990CF51F22225F7C00A9D8D3 /* DoneTodoAPI.swift */,
+			);
+			path = Todos;
+			sourceTree = "<group>";
+		};
+		990CF525222269AF00A9D8D3 /* Primitive */ = {
+			isa = PBXGroup;
+			children = (
+				990CF526222269BA00A9D8D3 /* Primitive.swift */,
+				990CF528222269C400A9D8D3 /* PrimitiveID.swift */,
+			);
+			path = Primitive;
+			sourceTree = "<group>";
+		};
+		990CF52C22226DE100A9D8D3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				990CF52A22226DDC00A9D8D3 /* EmptyReponse.swift */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 		997045CD2178DEEF00FFB736 = {
@@ -251,6 +440,7 @@
 		99704607217986B200FFB736 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
+				9973E0212234043200F73907 /* Todos */,
 				9970461821798A4400FFB736 /* MainBuilder.swift */,
 				9979469B2219A90700B6EBB3 /* MenuBuilder.swift */,
 			);
@@ -305,6 +495,9 @@
 			children = (
 				99794659221838FE00B6EBB3 /* Core */,
 				99794656221838EB00B6EBB3 /* CollectionMenuViewModel.swift */,
+				990CF50C22225D8F00A9D8D3 /* TodoViewModel.swift */,
+				992D3A8822230D0F00B58997 /* AddTodoViewModel.swift */,
+				9973E022223404EF00F73907 /* EditTodoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -313,6 +506,7 @@
 			isa = PBXGroup;
 			children = (
 				9979464122182D8500B6EBB3 /* LaunchScreen */,
+				990CF4EB22223A2700A9D8D3 /* Todos */,
 				9979464022182D6A00B6EBB3 /* CollectionMenu */,
 			);
 			path = Views;
@@ -321,6 +515,8 @@
 		9970460E2179880700FFB736 /* Wireframes */ = {
 			isa = PBXGroup;
 			children = (
+				990CF52F222276DF00A9D8D3 /* CollectionMenuWireframe.swift */,
+				9946957C2222ADDA00D5DF26 /* TodosWireframe.swift */,
 			);
 			path = Wireframes;
 			sourceTree = "<group>";
@@ -329,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				997946972219A7EC00B6EBB3 /* MenuRepository.swift */,
+				990CF51022225EC800A9D8D3 /* TodosRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -344,8 +541,10 @@
 		997046132179884000FFB736 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				990CF525222269AF00A9D8D3 /* Primitive */,
 				990CF4E82221B60100A9D8D3 /* Enums */,
 				9979467A221841AF00B6EBB3 /* MenuEntity.swift */,
+				990CF5062222585900A9D8D3 /* TodoEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -354,6 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				997946992219A8A900B6EBB3 /* MenuUseCase.swift */,
+				990CF50E22225DD600A9D8D3 /* TodosUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -361,7 +561,9 @@
 		997046152179886500FFB736 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				990CF52C22226DE100A9D8D3 /* Core */,
 				9979467C2219929C00B6EBB3 /* MenuResponse.swift */,
+				990CF5232222622B00A9D8D3 /* TodoResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -404,9 +606,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9973E0212234043200F73907 /* Todos */ = {
+			isa = PBXGroup;
+			children = (
+				990CF52D2222765B00A9D8D3 /* TodosBuilder.swift */,
+				9946957A2222AD6700D5DF26 /* AddTodoBuilder.swift */,
+				9973E01F2234042A00F73907 /* EditTodoBuilder.swift */,
+			);
+			path = Todos;
+			sourceTree = "<group>";
+		};
 		9979463F22182D1300B6EBB3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				990CF4F8222252FA00A9D8D3 /* Todo */,
 				9979465F221839A800B6EBB3 /* CollectionMenu */,
 				9979465E2218399B00B6EBB3 /* ViewController */,
 			);
@@ -466,6 +679,7 @@
 				997946522218315D00B6EBB3 /* UIView+.swift */,
 				9979466822183AB300B6EBB3 /* UITableView+.swift */,
 				99AE467A222185BC005B6D4E /* UINavigationBar+.swift */,
+				992D3A7E2222D68A00B58997 /* UIColor+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -503,6 +717,9 @@
 				9979469E2219ADF000B6EBB3 /* CompositeDisposable+.swift */,
 				997946A42219AFD900B6EBB3 /* UIViewController+Rx.swift */,
 				997946A62219B00300B6EBB3 /* ObservableType+.swift */,
+				992D3A7C2222D1E400B58997 /* UITextView+RxPlaceholder.swift */,
+				992D3A822222FA2E00B58997 /* UITextField+Rx.swift */,
+				992D3A842222FAE000B58997 /* RxTextFieldDelegateProxy.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -518,6 +735,7 @@
 		9979467222183C3200B6EBB3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				990CF5312222836100A9D8D3 /* SwipeDismissable.swift */,
 				9979467322183C4400B6EBB3 /* NibLoadable.swift */,
 				997946A22219AEAD00B6EBB3 /* StoryboardLoadable.swift */,
 				997946952219A4E400B6EBB3 /* EntityTranslatable.swift */,
@@ -529,6 +747,8 @@
 			isa = PBXGroup;
 			children = (
 				997946782218416900B6EBB3 /* SectionOfCollectionMenu.swift */,
+				990CF5082222598300A9D8D3 /* SectionOfTodos.swift */,
+				994695782222A61100D5DF26 /* SectionOfEditTodo.swift */,
 			);
 			path = SectionModels;
 			sourceTree = "<group>";
@@ -537,7 +757,8 @@
 			isa = PBXGroup;
 			children = (
 				99794683221994AF00B6EBB3 /* Core */,
-				9979467F2219942400B6EBB3 /* MenuAPI.swift */,
+				990CF51522225F2300A9D8D3 /* Menu */,
+				990CF51622225F2D00A9D8D3 /* Todos */,
 			);
 			path = gohome;
 			sourceTree = "<group>";
@@ -567,8 +788,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 997045FE2178DEF500FFB736 /* Build configuration list for PBXNativeTarget "SwiftyHome" */;
 			buildPhases = (
-				9979469022199C7900B6EBB3 /* Run DotEnv Script */,
 				E99236DD1DBB8A63C3884FD8 /* [CP] Check Pods Manifest.lock */,
+				9979469022199C7900B6EBB3 /* Run DotEnv Script */,
 				997045D22178DEF000FFB736 /* Sources */,
 				997045D32178DEF000FFB736 /* Frameworks */,
 				997045D42178DEF000FFB736 /* Resources */,
@@ -673,15 +894,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				997045E42178DEF400FFB736 /* LaunchScreen.storyboard in Resources */,
+				9973E0292234D05500F73907 /* AddTodoViewController.storyboard in Resources */,
 				9979468D22199B4D00B6EBB3 /* .env.example in Resources */,
 				99794650221830B100B6EBB3 /* CollectionMenuContentView.xib in Resources */,
 				99AE46772221723B005B6D4E /* CollectionMenuTableView.xib in Resources */,
 				99AE467322217167005B6D4E /* CollectionMenuTableViewCell.xib in Resources */,
+				990CF4EF22223A7800A9D8D3 /* TodoView.xib in Resources */,
 				9979468F22199B6000B6EBB3 /* .env in Resources */,
+				990CF5012222544B00A9D8D3 /* TodoTableView.xib in Resources */,
+				99DA30AE22229B8800F3867E /* EditTodoViewController.storyboard in Resources */,
+				994695772222A35400D5DF26 /* EditTodoTableViewCell.xib in Resources */,
 				99794655221832BA00B6EBB3 /* CollectionMenuContentImageView.xib in Resources */,
+				99DA30B222229BF500F3867E /* EditTodoView.xib in Resources */,
+				994695732222A1D700D5DF26 /* EditTodoTableView.xib in Resources */,
 				997045E12178DEF400FFB736 /* Assets.xcassets in Resources */,
 				997946A12219AE8000B6EBB3 /* CollectionMenuViewController.storyboard in Resources */,
+				990CF4FC2222534700A9D8D3 /* TodosViewController.storyboard in Resources */,
 				9970461C21798CF300FFB736 /* ViewController.storyboard in Resources */,
+				990CF4F522224FDA00A9D8D3 /* TodoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,6 +1015,7 @@
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -795,6 +1026,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -851,6 +1083,7 @@
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -861,6 +1094,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -899,35 +1133,73 @@
 			files = (
 				997946942219A37E00B6EBB3 /* AppDelegate+Dotenv.swift in Sources */,
 				9979466922183AB300B6EBB3 /* UITableView+.swift in Sources */,
+				990CF52022225F7C00A9D8D3 /* DoneTodoAPI.swift in Sources */,
 				9979466E22183B5200B6EBB3 /* UITableViewCell+Rx.swift in Sources */,
 				9970461921798A4400FFB736 /* MainBuilder.swift in Sources */,
+				990CF50F22225DD600A9D8D3 /* TodosUseCase.swift in Sources */,
+				992D3A7D2222D1E400B58997 /* UITextView+RxPlaceholder.swift in Sources */,
+				990CF4FA2222533500A9D8D3 /* TodosViewController.swift in Sources */,
 				997946982219A7EC00B6EBB3 /* MenuRepository.swift in Sources */,
 				997946792218416900B6EBB3 /* SectionOfCollectionMenu.swift in Sources */,
+				990CF51E22225F7000A9D8D3 /* UpdateTodoAPI.swift in Sources */,
+				990CF529222269C400A9D8D3 /* PrimitiveID.swift in Sources */,
 				997946A72219B00300B6EBB3 /* ObservableType+.swift in Sources */,
+				990CF522222261EE00A9D8D3 /* GetAllTodosAPI.swift in Sources */,
+				990CF50D22225D8F00A9D8D3 /* TodoViewModel.swift in Sources */,
 				9979465B2218391F00B6EBB3 /* ViewModel.swift in Sources */,
 				9979467B221841AF00B6EBB3 /* MenuEntity.swift in Sources */,
+				990CF4ED22223A6E00A9D8D3 /* TodoView.swift in Sources */,
 				9979467D2219929C00B6EBB3 /* MenuResponse.swift in Sources */,
+				990CF4F422224FDA00A9D8D3 /* TodoTableViewCell.swift in Sources */,
+				990CF5322222836100A9D8D3 /* SwipeDismissable.swift in Sources */,
+				994695762222A35400D5DF26 /* EditTodoTableViewCell.swift in Sources */,
 				997946532218315D00B6EBB3 /* UIView+.swift in Sources */,
+				990CF527222269BA00A9D8D3 /* Primitive.swift in Sources */,
 				997946962219A4E400B6EBB3 /* EntityTranslatable.swift in Sources */,
+				9946957D2222ADDA00D5DF26 /* TodosWireframe.swift in Sources */,
 				997045DC2178DEF000FFB736 /* ViewController.swift in Sources */,
 				9979469C2219A90700B6EBB3 /* MenuBuilder.swift in Sources */,
+				9973E025223405EB00F73907 /* EditTodoViewController.swift in Sources */,
+				990CF4F72222503B00A9D8D3 /* TodoState.swift in Sources */,
+				990CF530222276DF00A9D8D3 /* CollectionMenuWireframe.swift in Sources */,
+				990CF5072222585900A9D8D3 /* TodoEntity.swift in Sources */,
 				9979464E221830A500B6EBB3 /* CollectionMenuContentView.swift in Sources */,
+				9973E023223404EF00F73907 /* EditTodoViewModel.swift in Sources */,
+				990CF51822225F4400A9D8D3 /* CreateTodoAPI.swift in Sources */,
+				990CF5092222598300A9D8D3 /* SectionOfTodos.swift in Sources */,
+				990CF51A22225F5000A9D8D3 /* GetTodoAPI.swift in Sources */,
+				9973E0202234042A00F73907 /* EditTodoBuilder.swift in Sources */,
 				997946A32219AEAD00B6EBB3 /* StoryboardLoadable.swift in Sources */,
 				9979467422183C4400B6EBB3 /* NibLoadable.swift in Sources */,
+				990CF51122225EC800A9D8D3 /* TodosRepository.swift in Sources */,
+				99DA30B022229BE300F3867E /* EditTodoView.swift in Sources */,
 				99794661221839B900B6EBB3 /* CollectionMenuViewController.swift in Sources */,
 				9979469F2219ADF000B6EBB3 /* CompositeDisposable+.swift in Sources */,
+				99DA30AC22229B6F00F3867E /* AddTodoViewController.swift in Sources */,
+				992D3A8922230D0F00B58997 /* AddTodoViewModel.swift in Sources */,
+				990CF52E2222765B00A9D8D3 /* TodosBuilder.swift in Sources */,
+				992D3A832222FA2E00B58997 /* UITextField+Rx.swift in Sources */,
 				99AE467B222185BC005B6D4E /* UINavigationBar+.swift in Sources */,
 				9979467022183B9D00B6EBB3 /* NSObject+.swift in Sources */,
+				990CF51C22225F6600A9D8D3 /* DeleteTodoAPI.swift in Sources */,
+				994695712222A1CC00D5DF26 /* EditTodoTableView.swift in Sources */,
+				992D3A852222FAE000B58997 /* RxTextFieldDelegateProxy.swift in Sources */,
+				990CF4FF2222544200A9D8D3 /* TodoTableView.swift in Sources */,
 				99AE467222217167005B6D4E /* CollectionMenuTableViewCell.swift in Sources */,
+				992D3A7F2222D68A00B58997 /* UIColor+.swift in Sources */,
+				990CF52B22226DDC00A9D8D3 /* EmptyReponse.swift in Sources */,
 				990CF4EA2221B61300A9D8D3 /* CollectionMenuType.swift in Sources */,
 				99794682221994A300B6EBB3 /* GoHomeAPI.swift in Sources */,
 				9979465D2218393900B6EBB3 /* DeinitDisposable.swift in Sources */,
+				990CF5242222622B00A9D8D3 /* TodoResponse.swift in Sources */,
+				9946957B2222AD6700D5DF26 /* AddTodoBuilder.swift in Sources */,
 				997946A52219AFD900B6EBB3 /* UIViewController+Rx.swift in Sources */,
 				99794657221838EB00B6EBB3 /* CollectionMenuViewModel.swift in Sources */,
 				997045DA2178DEF000FFB736 /* AppDelegate.swift in Sources */,
 				99AE467522217233005B6D4E /* CollectionMenuTableView.swift in Sources */,
 				9979464A2218308000B6EBB3 /* CollectionMenuContentImageView.swift in Sources */,
 				997946802219942400B6EBB3 /* MenuAPI.swift in Sources */,
+				994695792222A61100D5DF26 /* SectionOfEditTodo.swift in Sources */,
 				9979469A2219A8A900B6EBB3 /* MenuUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
